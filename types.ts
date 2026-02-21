@@ -1,0 +1,1 @@
+//describes database types (tables & elements)

@@ -1,0 +1,1 @@
+//maps views and server to client side
