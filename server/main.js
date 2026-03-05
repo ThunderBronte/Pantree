@@ -15,7 +15,7 @@ const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME || 'pantree_db',
+    database: process.env.DB_NAME || 'pantree',
     waitForConnections: true,
     connectionLimit: 10, //idk what limit we should put here
     queueLimit: 0,
@@ -23,13 +23,14 @@ const pool = mysql.createPool({
 
 //General Route
 //get example
-app.get('/filehere', async (req, res) => {
+app.get('/users', async (req, res) => {
     try {
-        const [rows] = await pool.query('SQL QUERY HERE');
+        const [rows] = await pool.query('SELECT * FROM users;');
+        console.log(rows);
         res.json(rows);
     } catch (e) {
         console.error(e);
-        res.status(500).json({error: "Error fetching INSERT MESSAGE HERE"});
+        res.status(500).json({error: "Error fetching user data"});
     }
 })
 //post example
