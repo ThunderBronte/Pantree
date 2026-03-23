@@ -2,11 +2,11 @@ import { LitElement, html, css } from "https://unpkg.com/lit@3/index.js?module";
 //import RecipesIcon from '../images/recipes.svg';
 
 const FOOTER_LINKS = [
-    {name: 'Home', path: '/', icon: '/assets/images/home.svg'},
-    {name: 'My Pantry', path: '/pantry', icon: '/assets/images/pantry.svg'},
-    {name: 'My Lists', path: '/my-lists', icon: '/assets/images/list.svg'},
+    {name: 'Home', path: '/', icon: 'assets/images/home.svg'},
+    {name: 'My Pantry', path: '/pantry', icon: 'assets/images/pantry.svg'},
+    {name: 'My Lists', path: '/my-lists', icon: 'assets/images/list.svg'},
     {name: 'Recipes', path: '/recipes', icon: ''},
-    {name: 'Profile', path: '/profile', icon: '/assets/images/profile.svg'},
+    {name: 'Profile', path: '/profile', icon: 'assets/images/profile.svg'},
 ];
 
 

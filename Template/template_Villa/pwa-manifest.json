@@ -7,7 +7,7 @@
     "display": "standalone",
     "icons": [
         {
-            "src": "assets/images/Pantree256.png",
+            "src": "assets/images/Pantree192.png",
             "sizes": "192x192"
         },
         {
