@@ -41,6 +41,14 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
+body{
+  background-color: #F3E5D9;
+}
+
+header, .sub-header, .header-area.header-sticky  {
+  background-color: #E4C9B2;
+}
+
 .clearfix:after {
   content: ".";
   display: block;
