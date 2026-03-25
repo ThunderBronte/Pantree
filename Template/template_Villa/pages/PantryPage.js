@@ -16,7 +16,7 @@ export default function PantryPage({ currentPath }) {
       <!--Search / filter-->
       <div style="display: flex; gap: 24px; border-radius: 40px; text-align: center; background-color: #F3E5D9; padding: 12px 24px; margin-bottom: 24px"><span><img src="/assets/images/search.svg" style="height:24px"></span>
       <input style="font-style: italic; color:#705B48; background: none; border:none;" placeholder="Search..."></div>
-        <ul class="properties-filter">
+        <ul class="properties-filter" style="margin-bottom: 24px;">
           <li>
             <a class="is_active" href="#!" data-filter="*">All</a>
           </li>
@@ -38,57 +38,161 @@ export default function PantryPage({ currentPath }) {
         <div class="row properties-box">
 
         <!--Dry Storage Component-->
-          <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
-            <div class="item">
-              <h4><a href="property-details.html">Pantry</a></h4>
-              <ul style="background-color: #F3E5D9; border-radius: 24px; padding: 12px;">
-                <li>Pretzle Img</li>
-                <li>Chips Img</li>
-                <li>Rice Img</li>
-                <li>Beans Img</li>
-                <li>Beans Img</li>
-              </ul>
-              <div class="main-button">
-                <a href="property-details.html">View All Items</a>
+          <div style="margin-bottom: 12px;">
+            <h4 style="color:#CB2127;">Pantry</h4>
+
+          <!--Single Item -->
+            <div style="display: flex; gap: 48px; align-items: center; background-color: white; border-radius: 8px; padding: 12px; margin: 12px 0px; justify-content: space-between; filter: drop-shadow(2px 2px 2px gray)">
+              <div>
+                <p style="font-weight: bold; color: black">Spaghetti</p>
+                <p style="font-size: 10px; color: #666">Grains</p>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">-</a>
+                </div>
+
+                <div style="text-align: center; align-items: center;">
+                  <div><h6 style="color: #CB2127">4</h6></div>
+                  <p style="font-size: 10px; color: #666; line-height: 8px;">boxes</p>
+                </div>
+
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">+</a>
+                </div>
               </div>
             </div>
+
+            <!--Single Item -->
+            <div style="display: flex; gap: 48px; align-items: center; background-color: white; border-radius: 8px; padding: 12px; margin: 12px 0px; justify-content: space-between; filter: drop-shadow(2px 2px 2px gray)">
+              <div>
+                <p style="font-weight: bold; color: black">Brown Rice</p>
+                <p style="font-size: 10px; color: #666">Grains</p>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">-</a>
+                </div>
+
+                <div style="text-align: center; align-items: center;">
+                  <div><h6 style="color: #CB2127">1</h6></div>
+                  <p style="font-size: 10px; color: #666; line-height: 8px;">bag</p>
+                </div>
+
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">+</a>
+                </div>
+              </div>
+            </div>
+
           </div>
           
         <!--Fridge Component-->
-          <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
-            <div class="item">
-              <h4><a href="property-details.html">Fridge</a></h4>
-              <ul style="background-color: #F2FAFF; border-radius: 24px; padding: 12px;">
-                <li>Milk Img</li>
-                <li>Jelly Img</li>
-                <li>Beef Img</li>
-                <li>Beef Img</li>
-                <li>Bacon Img</li>
-                <li>Bacon Img</li>
-                <li>Egg Img</li>
-                <li>Egg Img</li>
-              </ul>
-              <div class="main-button">
-                <a href="property-details.html">View All Items</a>
+          <div  style="margin-bottom: 12px;">
+            <h4 style="color:#CB2127;">Fridge</h4>
+
+            <!--Single Item -->
+            <div style="display: flex; gap: 48px; align-items: center; background-color: white; border-radius: 8px; padding: 12px; margin: 12px 0px; justify-content: space-between; filter: drop-shadow(2px 2px 2px gray)">
+              <div>
+                <p style="font-weight: bold; color: black">Whole Milk</p>
+                <p style="font-size: 10px; color: #666;">Dairy | Expires Mar 4</p>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">-</a>
+                </div>
+
+                <div style="text-align: center; align-items: center;">
+                  <div><h6 style="color: #CB2127">1</h6></div>
+                  <p style="font-size: 10px; color: #666; line-height: 8px;">gallon</p>
+                </div>
+
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">+</a>
+                </div>
               </div>
             </div>
+
+            <!--Single Item EXPIRING SOON-->
+            <div style="display: flex; gap: 48px; align-items: center; background-color: white; border: 2px solid #CB2127; border-radius: 8px; padding: 12px; margin: 12px 0px; justify-content: space-between; filter: drop-shadow(2px 2px 2px gray)">
+              <div style="line-height: 8px;">
+                <p style="font-weight: bold; color: black">Chicken Breast</p>
+                <span style="color: white; background-color: #CB2127; font-size: 8px; padding: 0px 4px; border-radius: 10px;">EXPIRING SOON</span>
+                <p style="font-size: 10px; color: #666;">Meat | Expires Feb 27</p>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">-</a>
+                </div>
+
+                <div style="text-align: center; align-items: center;">
+                  <div><h6 style="color: #CB2127">3</h6></div>
+                  <p style="font-size: 10px; color: #666; line-height: 8px;">lbs</p>
+                </div>
+
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">+</a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         <!--Freezer Component-->
-          <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
-            <div class="item">
-              <h4><a href="property-details.html">Freezer</a></h4>
-              <ul style="background-color: #E4EEFF; border-radius: 24px; padding: 12px;">
-                <li>BlueBerries Img</li>
-                <li>ChickenNugget Img</li>
-                <li>Potato Img</li>
-                <li>Potato Img</li>
-                <li>Potato Img</li>
-              </ul>
-              <div class="main-button">
-                <a href="property-details.html">View All Items</a>
+          <div  style="margin-bottom: 12px;">
+            <h4 style="color:#CB2127;">Freezer</h4>
+
+            <!--Single Item -->
+            <div style="display: flex; gap: 48px; align-items: center; background-color: white; border-radius: 8px; padding: 12px; margin: 12px 0px; justify-content: space-between; filter: drop-shadow(2px 2px 2px gray)">
+              <div>
+                <p style="font-weight: bold; color: black">Blueberries</p>
+                <p style="font-size: 10px; color: #666;">Fruit | Expires Mar 4</p>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">-</a>
+                </div>
+
+                <div style="text-align: center; align-items: center;">
+                  <div><h6 style="color: #CB2127">1</h6></div>
+                  <p style="font-size: 10px; color: #666; line-height: 8px;">bag</p>
+                </div>
+
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">+</a>
+                </div>
               </div>
             </div>
+
+            <!--Single Item EXPIRING SOON-->
+            <div style="display: flex; gap: 48px; align-items: center; background-color: white; border: 2px solid #CB2127; border-radius: 8px; padding: 12px; margin: 12px 0px; justify-content: space-between; filter: drop-shadow(2px 2px 2px gray)">
+              <div style="line-height: 8px;">
+                <p style="font-weight: bold; color: black">Ice cream</p>
+                <span style="color: white; background-color: #CB2127; font-size: 8px; padding: 0px 4px; border-radius: 10px;">EXPIRING SOON</span>
+                <p style="font-size: 10px; color: #666;">Dairy | Expires Feb 27</p>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">-</a>
+                </div>
+
+                <div style="text-align: center; align-items: center;">
+                  <div><h6 style="color: #CB2127">1</h6></div>
+                  <p style="font-size: 10px; color: #666; line-height: 8px;">tub</p>
+                </div>
+
+                <div class="main-button">
+                  <a href="property-details.html" style="text-align: center;background-color: #F3E5D9; color: #705B48; width: 40px;padding: 0px; align-content: center">+</a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <!--
