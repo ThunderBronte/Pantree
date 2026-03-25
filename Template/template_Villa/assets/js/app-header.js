@@ -1,14 +1,13 @@
 import { LitElement, html, css } from "lit";
 
-
-class NavBar extends LitElement {
+class AppHeader extends LitElement {
 
     createRenderRoot() {
         return this; // disables Shadow DOM
     }
 
     static get tag() {
-        return "nav-bar";
+        return "app-header";
     }
 
     static get properties() {
@@ -58,6 +57,7 @@ class NavBar extends LitElement {
                 display: block;
                 width: 100%;
                 color: black;
+                background-color: #E4C9B2;
                 //font-family: "K2D Mono";
             }
             nav#container {
@@ -76,21 +76,19 @@ class NavBar extends LitElement {
 
     render() {
     return html`
-        <nav class="main-nav">
+        <div class="main-nav">
             <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
                 <img src="./assets/images/Logo.svg" alt="Pantree Logo" width="40" height="40">
                 <h1>Pantree</h1>
             </a>
 
-            
-
             <a class="menu-trigger">
                 <span>Menu</span>
             </a>
-        </nav>
+        </div>
     `;
 }
 }
 
 //declare as a callable html element
-customElements.define(NavBar.tag, NavBar);
+customElements.define(AppHeader.tag, AppHeader);

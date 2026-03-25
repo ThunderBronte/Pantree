@@ -1,6 +1,7 @@
 // This file handles page navigation and connects slugs to pages
 import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
+import {css} from "@popperjs/core"
 
 import HomePage from "./pages/HomePage.js";
 import RecipesPage from "./pages/RecipesPage.js";
@@ -9,13 +10,18 @@ import MyLists from "./pages/MyListsPage.js";
 import ProfilePage from "./pages/ProfilePage.js";
 import LoginPage from "./pages/LoginPage.js";
 ///import ProfileEditPage from "./pages/ProfileEditPage.js";
-import './assets/js/nav-bar.js';
+import './assets/js/app-header.js';
 
 import "./assets/js/app-footer.js";
 
 console.log("app.js loaded");
 
 export class App extends LitElement {
+  
+createRenderRoot() {
+    return this;
+  }
+
 
   constructor() {
     super();
@@ -92,10 +98,6 @@ export class App extends LitElement {
   render() {
     return html`
       <div class="container">
-        <nav-bar
-          .currentPath=${this.currentPath}
-          .onNavigate=${this.navigate}
-        ></nav-bar>
 
         <main class="content">
           ${this.renderPage()}
