@@ -3,18 +3,18 @@ import { html } from "lit";
 export default function PantryPage({ currentPath }) {
   return html`
   <!--Add New Item Component-->
-    <div class="section properties" style="justify-self: center;">
+    <div class="section properties" style="justify-self: center; margin:48px">
         <div class="main-button">
                 <a href="property-details.html">+ Add New Item</a>
             </div>
       </div>
 
   <!--Main Content-->
-    <div class="section properties">
+    <div class="section properties" style="margin:48px">
       <div class="container">
 
       <!--Search / filter-->
-      <div>Search Bar</div>
+      <div style="display: flex; gap: 24px; border-radius: 40px; text-align: center; background-color: #F3E5D9; font-style: italic; color:#705B48; padding: 12px 24px; margin-bottom: 24px"><span><img src="/assets/images/search.svg" style="height:24px"></span>Search Bar...</div>
         <ul class="properties-filter">
           <li>
             <a class="is_active" href="#!" data-filter="*">All</a>
