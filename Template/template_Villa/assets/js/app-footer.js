@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "https://unpkg.com/lit@3/index.js?module";
+import { LitElement, html, css } from "lit";
 //import RecipesIcon from '../images/recipes.svg';
 
 const FOOTER_LINKS = [
@@ -27,9 +27,7 @@ class AppFooter extends LitElement {
     constructor() {
         super();
         this.currentPath = "/";
-        this.onNavigate = (path) => {
-            window.location.hash = path;
-        };
+        this.onNavigate = null;
         this.user = null;
     }
 

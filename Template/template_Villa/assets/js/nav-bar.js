@@ -1,11 +1,4 @@
-import { LitElement, html, css } from "https://unpkg.com/lit@3/index.js?module";
-
-const NAV_LINKS = [
-    {name: 'home', path: '/'},
-    {name: 'communities', path: '/communities'},
-    {name: 'libraries', path: '/libraries'},
-    {name: 'profile', path: '/profile'},
-];
+import { LitElement, html, css } from "lit";
 
 
 class NavBar extends LitElement {

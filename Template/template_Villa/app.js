@@ -2,20 +2,24 @@
 import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import HomePage from "./pages/Home";
-import RecipesPage from "./pages/Recipes";
-import PantryPage from "./pages/Pantry";
-import MyLists from "./pages/MyLists";
-import ProfilePage from "./pages/Profile";
-import LoginPage from "./pages/Login";
-import ProfileEditPage from "./pages/ProfileEdit";
+import HomePage from "./pages/HomePage.js";
+import RecipesPage from "./pages/RecipesPage.js";
+import PantryPage from "./pages/PantryPage.js";
+import MyLists from "./pages/MyListsPage.js";
+import ProfilePage from "./pages/ProfilePage.js";
+import LoginPage from "./pages/LoginPage.js";
+///import ProfileEditPage from "./pages/ProfileEditPage.js";
+import './assets/js/nav-bar.js';
 
 import "./assets/js/app-footer.js";
 
-@customElement("app-root")
+console.log("app.js loaded");
+
 export class App extends LitElement {
+
   constructor() {
     super();
+    console.log("App constructor ran");
     this.currentPath = this.getPathFromHash();
 
     // Bind handlers so `this` works correctly
@@ -74,8 +78,8 @@ export class App extends LitElement {
       case basePath.startsWith("/login"):
         return LoginPage({ currentPath: this.currentPath });
 
-      case basePath.startsWith("/profile/edit"):
-        return ProfileEditPage({ currentPath: this.currentPath });
+      //case basePath.startsWith("/profile/edit"):
+        //return ProfileEditPage({ currentPath: this.currentPath });
 
       case basePath.startsWith("/profile"):
         return ProfilePage({ currentPath: this.currentPath });
@@ -98,7 +102,13 @@ export class App extends LitElement {
         </main>
       </div>
 
-      <app-footer></app-footer>
+      <app-footer
+      .currentPath=${this.currentPath}
+      .onNavigate=${this.navigate}
+      >
+      </app-footer>
     `;
   }
 }
+
+customElements.define("app-root", App);
