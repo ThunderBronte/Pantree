@@ -77,7 +77,7 @@ class AppHeader extends LitElement {
     render() {
     return html`
         <div class="main-nav">
-            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px;">
                 <img src="./assets/images/Logo.svg" alt="Pantree Logo" width="40" height="40">
                 <h1>Pantree</h1>
             </a>

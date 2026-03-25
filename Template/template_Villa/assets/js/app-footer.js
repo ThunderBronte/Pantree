@@ -2,7 +2,6 @@ import { LitElement, html, css } from "lit";
 //import RecipesIcon from '../images/recipes.svg';
 
 const FOOTER_LINKS = [
-    {name: 'Home', path: '/', icon: 'assets/images/home.svg'},
     {name: 'My Pantry', path: '/pantry', icon: 'assets/images/pantry.svg'},
     {name: 'My Lists', path: '/my-lists', icon: 'assets/images/list.svg'},
     {name: 'Recipes', path: '/recipes', icon: ''},
