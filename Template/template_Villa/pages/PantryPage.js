@@ -14,7 +14,8 @@ export default function PantryPage({ currentPath }) {
       <div class="container">
 
       <!--Search / filter-->
-      <div style="display: flex; gap: 24px; border-radius: 40px; text-align: center; background-color: #F3E5D9; font-style: italic; color:#705B48; padding: 12px 24px; margin-bottom: 24px"><span><img src="/assets/images/search.svg" style="height:24px"></span>Search Bar...</div>
+      <div style="display: flex; gap: 24px; border-radius: 40px; text-align: center; background-color: #F3E5D9; padding: 12px 24px; margin-bottom: 24px"><span><img src="/assets/images/search.svg" style="height:24px"></span>
+      <input style="font-style: italic; color:#705B48; background: none; border:none;"placeholder="Search..."></div>
         <ul class="properties-filter">
           <li>
             <a class="is_active" href="#!" data-filter="*">All</a>
