@@ -8,55 +8,64 @@ export class AddItemButton extends LitElement {
     }
 
     static properties = {
-        open: { type: Boolean }
+        status: { type: String }
     };
 
     constructor() {
         super();
-        this.open = false;
+        this.status = "closed";
     }
 
     static styles = css`
         button {
-        background-color: #CB2127;
-        color: white;
-        border: none;
-        padding: 12px 48px;
-        border-radius: 40px;
-        font-size: 16px;
-        font-weight: medium;
-        cursor: pointer;
+            background-color: #CB2127;
+            color: white;
+            border: none;
+            padding: 12px 48px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: medium;
+            cursor: pointer;
+        }
+
+        .back-button {
+            background-color: #1E1E1E;
         }
 
         .modal {
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .card {
-        background: white;
-        padding: 16px;
-        border-radius: 8px;
-        width: 300px;
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            width: 300px;
         }
 
         input, select {
-        width: 100%;
-        margin-bottom: 8px;
-        padding: 6px;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 6px;
         }
     `;
 
-    openForm() {
-        this.open = true;
+    openCard() {
+        this.status = "open";
     }
-
-    closeForm() {
-        this.open = false;
+    openForm() {
+        this.status = "add"
+    }
+    back() {
+        this.status = "open";
+    }
+    closeCard() {
+        this.status = "closed";
     }
 
     submit(e) {
@@ -75,9 +84,10 @@ export class AddItemButton extends LitElement {
         isFav: false,
         count: [
             {
-            expMonth: form.expMonth.value,
-            expDay: Number(form.expDay.value),
-            expYear: Number(form.expYear.value),
+                expDate: form.expDate.value,
+            expMonth: "",
+            expDay: null,
+            expYear: null,
             expOnOpen: 7
             }
         ]
@@ -91,36 +101,75 @@ export class AddItemButton extends LitElement {
         })
         );
 
-        this.closeForm();
+        this.closeCard();
     }
 
     render() {
         return html`
-        <button @click=${this.openForm}>+ Add New Item</button>
+        <button @click=${this.openCard}>+ Add Item</button>
 
-        ${this.open ? html`
-            <search-bar></search-bar>
-            <div class="modal" @click=${this.closeForm}>
-            <div class="card" @click=${e => e.stopPropagation()}>
-                <form @submit=${this.submit}>
-                <input name="name" placeholder="Name" required />
-                <input name="type" placeholder="Type" />
-                <input name="unit" placeholder="Unit" />
-                <select name="section">
-                    <option value="pantry">Pantry</option>
-                    <option value="fridge">Fridge</option>
-                    <option value="freezer">Freezer</option>
-                </select>
+        ${this.status !== "closed" ? html`
+            
+            <div class="modal" @click=${this.closeCard}>
+                <div class="card" @click=${e => e.stopPropagation()}>
 
-                <input name="expMonth" placeholder="Month (e.g. April)" />
-                <input name="expDay" type="number" placeholder="Day" />
-                <input name="expYear" type="number" placeholder="Year" />
+                    ${this.status === "open" ? html`
+                        <search-bar></search-bar>
+                        <button @click=${this.openForm}>New Item</button>
+                    `
+                    : html`
+                        <form @submit=${this.submit}>
+                            <input name="name" placeholder="Type Name" required />
+                            <select name="type">
+                                <option value="" disabled selected>Select Type</option>
+                                <option value="Diary">Dairy</option>
+                                <option value="Meat">Meat</option>
+                                <option value="Grains">Grains</option>
+                                <option value="Produce">Produce</option>
+                            </select>
 
-                <button type="submit">Save</button>
-                </form>
+                            <select name="unit">
+                                <option value="" disabled selected>Select Unit</option>
+                                <option value="bag">Bag</option>
+                                <option value="block">Block</option>
+                                <option value="gallon">Gallon</option>
+                                <option value="quart">Pieces</option>
+                                <option value="quart">Quart</option>
+                                <option value="liter">Liter</option>
+                                <option value="lbs">lbs</option>
+                                <option value="floz">floz</option>
+                                <option value="oz">oz</option>
+                                <option value="mg">mg</option>
+                                <option value="g">g</option>
+                            </select>
+
+                            <select name="section">
+                                <option value="" disabled selected>Select Section</option>
+                                <option value="pantry">Pantry</option>
+                                <option value="fridge">Fridge</option>
+                                <option value="freezer">Freezer</option>
+                            </select>
+
+                            <label>Expiration Date: </label>
+                            <input name="expDate" type="date">
+
+                            <div style="display: flex; justify-content: space-between;">
+                                <button class="back-button" @click=${this.back}>Back</button>
+                                <button type="submit">Save</button>
+                            </div>
+                        </form>
+                    `}
+                    
+                    
+                </div>
             </div>
+        ` : this.status === "add" ? html`
+            <div class="modal" @click=${this.closeCard}>
+                <div class="card" @click=${e => e.stopPropagation()}>
+                    
+                </div>
             </div>
-        ` : null}
+        `: null}
         `;
     }
 }
