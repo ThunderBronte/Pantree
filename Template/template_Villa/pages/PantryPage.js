@@ -1,15 +1,10 @@
 import { html } from "lit";
 import { GroceryItem } from "../assets/js/item.js";
 import { AppPantry } from "../assets/js/pantry.js";
+import { AddItemButton } from "../assets/js/add-item-button.js";
 
 export default function PantryPage({ currentPath }) {
   return html`
-  <!--Add New Item Component-->
-    <div class="section properties" style="justify-self: center; margin:48px">
-        <div class="main-button">
-                <a href="property-details.html">+ Add New Item</a>
-            </div>
-      </div>
 
   <!--Main Content-->
     <div class="section properties" style="margin:48px">
@@ -38,6 +33,7 @@ export default function PantryPage({ currentPath }) {
 
       <!--Groups-->
 
+        <add-item-button></add-item-button>
           <app-pantry></app-pantry>
 
         <div class="section"></div>

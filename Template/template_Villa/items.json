@@ -118,7 +118,7 @@
         {
             "id": "7",
             "name": "Frozen Blueberries",
-            "type": "Fruit",
+            "type": "Produce",
             "singleCost": 6.99,
             "isFav": false,
             "unit": "bag",
