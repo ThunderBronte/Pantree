@@ -13,7 +13,7 @@ export class AppPantry extends LitElement {
 
   async connectedCallback() {
     super.connectedCallback();
-    const res = await fetch("../../items.json");
+    const res = await fetch("../../user-items.json");
     const data = await res.json();
     this.items = data.items;
   }

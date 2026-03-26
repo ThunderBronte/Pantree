@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit";
+import "./search-bar.js";
 
 export class AddItemButton extends LitElement {
 
@@ -69,6 +70,7 @@ export class AddItemButton extends LitElement {
         type: form.type.value,
         unit: form.unit.value,
         section: form.section.value,
+        added: new Date(),
         singleCost: 0,
         isFav: false,
         count: [
@@ -97,6 +99,7 @@ export class AddItemButton extends LitElement {
         <button @click=${this.openForm}>+ Add New Item</button>
 
         ${this.open ? html`
+            <search-bar></search-bar>
             <div class="modal" @click=${this.closeForm}>
             <div class="card" @click=${e => e.stopPropagation()}>
                 <form @submit=${this.submit}>
