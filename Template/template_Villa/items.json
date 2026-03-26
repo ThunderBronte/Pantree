@@ -1,0 +1,138 @@
+{
+    "items": [
+        {
+            "id": "1",
+            "name": "Whole Milk",
+            "type": "Dairy",
+            "singleCost": 2.99,
+            "isFav": false,
+            "unit": "Gallon",
+            "section": "fridge",
+
+            "count": [
+                {
+                    "expMonth": "April",
+                    "expDay": 4,
+                    "expYear": 2026,
+                    "expOnOpen": 7
+                }
+            ]
+        },
+
+        {
+            "id": "2",
+            "name": "Cheddar Cheese",
+            "type": "Dairy",
+            "singleCost": 2.99,
+            "isFav": false,
+            "unit": "Block",
+            "section": "fridge",
+
+            "count": [
+                {
+                    "expMonth": "April",
+                    "expDay": 4,
+                    "expYear": 2026,
+                    "expOnOpen": 7
+                }
+            ]
+            
+        },
+
+        {
+            "id": "3",
+            "name": "Cheddar Cheese",
+            "type": "Dairy",
+            "singleCost": 2.99,
+            "isFav": false,
+            "unit": "Block",
+            "section": "fridge",
+
+            "count": [
+                {
+                    "expMonth": "April",
+                    "expDay": 4,
+                    "expYear": 2026,
+                    "expOnOpen": 7
+                }
+            ]
+        },
+
+        {
+            "id": "4",
+            "name": "Spaghetti",
+            "type": "Grains",
+            "singleCost": 2.99,
+            "isFav": false,
+            "unit": "Bag",
+            "section": "pantry",
+
+            "count": [
+                {
+                    "expMonth": "April",
+                    "expDay": 4,
+                    "expYear": 2026,
+                    "expOnOpen": 7
+                }
+            ]
+        },
+
+        {
+            "id": "5",
+            "name": "Brown Rice",
+            "type": "Grains",
+            "singleCost": 2.99,
+            "isFav": false,
+            "unit": "Bag",
+            "section": "pantry",
+
+            "count": [
+                {
+                    "expMonth": "April",
+                    "expDay": 4,
+                    "expYear": 2026,
+                    "expOnOpen": 7
+                }
+            ]
+        },
+
+        {
+            "id": "6",
+            "name": "Chicken Breast",
+            "type": "Meat",
+            "singleCost": 4.99,
+            "isFav": false,
+            "unit": "lbs",
+            "section": "fridge",
+
+            "count": [
+                {
+                    "expMonth": "March",
+                    "expDay": 29,
+                    "expYear": 2026,
+                    "expOnOpen": 5
+                }
+            ]
+        },
+
+        {
+            "id": "7",
+            "name": "Frozen Blueberries",
+            "type": "Fruit",
+            "singleCost": 6.99,
+            "isFav": false,
+            "unit": "bag",
+            "section": "freezer",
+
+            "count": [
+                {
+                    "expMonth": "April",
+                    "expDay": 29,
+                    "expYear": 2026,
+                    "expOnOpen": 10
+                }
+            ]
+        }
+    ]
+    
+}
