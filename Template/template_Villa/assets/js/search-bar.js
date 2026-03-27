@@ -52,6 +52,9 @@ class SearchBar extends LitElement {
 
     static get styles() {
         return css`
+        :host {
+            margin-bottom: 24px;
+        }
             div.wrapper {
                 display: flex;
                 gap: 24px;
@@ -59,7 +62,6 @@ class SearchBar extends LitElement {
                 text-align: center;
                 background-color: #F3E5D9;
                 padding: 10px 24px;
-                margin-bottom: 24px;
                 font-size: 16px;
             }
             img {
@@ -79,11 +81,11 @@ class SearchBar extends LitElement {
             ul {
                 list-style: none;
                 padding: 0;
-                margin: 8px 0 0 ;
+                margin: 8px;
             }
             li {
                 cursor: pointer;
-                padding: 6px 0;
+                padding: 6px 6px;
             }
             li:hover {
                 font-weight: bold;

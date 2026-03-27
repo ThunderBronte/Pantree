@@ -8,12 +8,14 @@ export class AddItemButton extends LitElement {
     }
 
     static properties = {
-        status: { type: String }
+        status: { type: String },
+        selectedItem: {type: Object}
     };
 
     constructor() {
         super();
         this.status = "closed";
+        this.selectedItem = null;
     }
 
     static styles = css`
@@ -42,10 +44,13 @@ export class AddItemButton extends LitElement {
         }
 
         .card {
+            display: flex;
+            flex-direction: column;
             background: white;
             padding: 16px;
             border-radius: 8px;
             width: 300px;
+            justify-items: center;
         }
 
         input, select {
@@ -104,6 +109,11 @@ export class AddItemButton extends LitElement {
         this.closeCard();
     }
 
+    onItemSelected(e) {
+        this.selectedItem = e.detail;
+        this.status = "add"; // reuse the form view
+    }
+
     render() {
         return html`
         <button @click=${this.openCard}>+ Add Item</button>
@@ -114,44 +124,46 @@ export class AddItemButton extends LitElement {
                 <div class="card" @click=${e => e.stopPropagation()}>
 
                     ${this.status === "open" ? html`
-                        <search-bar></search-bar>
+                        <search-bar
+                            @item-selected=${this.onItemSelected}>
+                        </search-bar>
                         <button @click=${this.openForm}>New Item</button>
                     `
                     : html`
                         <form @submit=${this.submit}>
-                            <input name="name" placeholder="Type Name" required />
+                            <input name="name" placeholder="Type Name" required .value=${this.selectedItem?.name ?? ""}/>
                             <select name="type">
                                 <option value="" disabled selected>Select Type</option>
-                                <option value="Diary">Dairy</option>
-                                <option value="Meat">Meat</option>
-                                <option value="Grains">Grains</option>
-                                <option value="Produce">Produce</option>
+                                <option value="Diary" ?selected=${this.selectedItem?.type === "Dairy"}>Dairy</option>
+                                <option value="Meat" ?selected=${this.selectedItem?.type === "Meat"}>Meat</option>
+                                <option value="Grains" ?selected=${this.selectedItem?.type === "Grains"}>Grains</option>
+                                <option value="Produce" ?selected=${this.selectedItem?.type === "Produce"}>Produce</option>
                             </select>
 
                             <select name="unit">
                                 <option value="" disabled selected>Select Unit</option>
-                                <option value="bag">Bag</option>
-                                <option value="block">Block</option>
-                                <option value="gallon">Gallon</option>
-                                <option value="quart">Pieces</option>
-                                <option value="quart">Quart</option>
-                                <option value="liter">Liter</option>
-                                <option value="lbs">lbs</option>
-                                <option value="floz">floz</option>
-                                <option value="oz">oz</option>
-                                <option value="mg">mg</option>
-                                <option value="g">g</option>
+                                <option value="bag" ?selected=${this.selectedItem?.unit === "bag"}>Bag</option>
+                                <option value="block" ?selected=${this.selectedItem?.unit === "block"}>Block</option>
+                                <option value="gallon" ?selected=${this.selectedItem?.unit === "gallon"}>Gallon</option>
+                                <option value="piece" ?selected=${this.selectedItem?.unit === "piece"}>Piece</option>
+                                <option value="quart" ?selected=${this.selectedItem?.unit === "quart"}>Quart</option>
+                                <option value="liter" ?selected=${this.selectedItem?.unit === "liter"}>Liter</option>
+                                <option value="lbs" ?selected=${this.selectedItem?.unit === "lbs"}>lbs</option>
+                                <option value="floz" ?selected=${this.selectedItem?.unit === "floz"}>floz</option>
+                                <option value="oz" ?selected=${this.selectedItem?.unit === "oz"}>oz</option>
+                                <option value="mg" ?selected=${this.selectedItem?.unit === "mg"}>mg</option>
+                                <option value="g" ?selected=${this.selectedItem?.unit === "g"}>g</option>
                             </select>
 
                             <select name="section">
                                 <option value="" disabled selected>Select Section</option>
-                                <option value="pantry">Pantry</option>
-                                <option value="fridge">Fridge</option>
-                                <option value="freezer">Freezer</option>
+                                <option value="pantry" ?selected=${this.selectedItem?.section === "pantry"}>Pantry</option>
+                                <option value="fridge" ?selected=${this.selectedItem?.section === "fridge"}>Fridge</option>
+                                <option value="freezer" ?selected=${this.selectedItem?.section === "freezer"}>Freezer</option>
                             </select>
 
                             <label>Expiration Date: </label>
-                            <input name="expDate" type="date">
+                            <input name="expDate" type="date" .value=${this.selectedItem?.count?.[0]?.expDate ?? ""}>
 
                             <div style="display: flex; justify-content: space-between;">
                                 <button class="back-button" @click=${this.back}>Back</button>

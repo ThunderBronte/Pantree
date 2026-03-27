@@ -6,7 +6,7 @@
             "type": "Dairy",
             "singleCost": 2.99,
             "isFav": false,
-            "unit": "Gallon",
+            "unit": "gallon",
             "section": "fridge",
             "added": "",
 
@@ -26,7 +26,7 @@
             "type": "Dairy",
             "singleCost": 2.99,
             "isFav": false,
-            "unit": "Block",
+            "unit": "block",
             "section": "fridge",
             "added": "",
 
@@ -47,7 +47,7 @@
             "type": "Dairy",
             "singleCost": 2.99,
             "isFav": false,
-            "unit": "Block",
+            "unit": "block",
             "section": "fridge",
             "added": "",
 
@@ -67,7 +67,7 @@
             "type": "Grains",
             "singleCost": 2.99,
             "isFav": false,
-            "unit": "Bag",
+            "unit": "bag",
             "section": "pantry",
             "added": "",
 
@@ -87,7 +87,7 @@
             "type": "Grains",
             "singleCost": 2.99,
             "isFav": false,
-            "unit": "Bag",
+            "unit": "bag",
             "section": "pantry",
             "added": "",
 
