@@ -33,24 +33,37 @@ class PantryFilter extends LitElement {
 
     static get styles() {
         return css`
-        
+        div {
+            margin: 24px;
+        }
+        button {
+            background-color: #1E1E1E;
+            color: white;
+            border: none;
+            padding: 12px 48px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: medium;
+            cursor: pointer;
+        }
+        button.is_active {
+            background-color: #CB2127;
+        }  
         `
     }
 
     render() {
         return html`
-            <ul class="properties-filter">
+            <div class="properties-filter">
                 ${["all", "dairy", "meat", "grains", "produce"].map(
                     type => html`
-                <li>
                     <button
                         class=${this.active === type ? "is_active" : ""}
                         @click=${() => this.selectFilter(type)}>
                         ${type.charAt(0).toUpperCase() + type.slice(1)}
                     </button>
-                </li>
                 `)}
-            </ul>
+            </div>
         `
     }
 

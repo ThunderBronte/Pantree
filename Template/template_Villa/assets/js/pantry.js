@@ -56,6 +56,11 @@ export class AppPantry extends LitElement {
 
 
   renderItems(items) {
+    
+    if (!items || items.length === 0) {
+      return html`<p class="empty">No Items Yet!</p>`;
+    }
+
     return items.map(
         item => html`
           <grocery-item
