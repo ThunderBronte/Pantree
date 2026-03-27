@@ -22,7 +22,6 @@ createRenderRoot() {
     return this;
   }
 
-
   constructor() {
     super();
     console.log("App constructor ran");
@@ -36,6 +35,10 @@ createRenderRoot() {
   connectedCallback() {
     super.connectedCallback();
     window.addEventListener("hashchange", this.handleHashChange);
+
+    window.addEventListener("profile-changed", () => {
+      this.requestUpdate();
+    });
   }
 
   disconnectedCallback() {
