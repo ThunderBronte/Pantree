@@ -3,12 +3,14 @@ import "./item.js";
 
 export class AppPantry extends LitElement {
   static properties = {
-    items: { type: Array }
+    items: { type: Array },
+    filterType: { type: String }
   };
 
   constructor() {
     super();
     this.items = [];
+    this.filterType = 'all'
   }
 
   async connectedCallback() {
@@ -17,6 +19,14 @@ export class AppPantry extends LitElement {
     const data = await res.json();
     this.items = data.items;
   }
+  
+  filterByType(items) {
+    if (this.filterType === "all") return items;
+    return items.filter(
+      item => item.type.toLowerCase() === this.filterType
+    );
+  }
+
 
   increaseItem(id) {
     this.items = this.items.map(item =>
@@ -40,9 +50,9 @@ export class AppPantry extends LitElement {
   }
 
   
-    itemsBySection(section= string) {
-        return this.items.filter(item => item.section.toLowerCase() === section);
-    }
+  itemsBySection(section= string) {
+    return this.filterByType(this.items.filter(item => item.section.toLowerCase() === section));
+  }
 
 
   renderItems(items) {

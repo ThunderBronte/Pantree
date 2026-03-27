@@ -2,8 +2,16 @@ import { html } from "lit";
 import { GroceryItem } from "../assets/js/item.js";
 import { AppPantry } from "../assets/js/pantry.js";
 import { AddItemButton } from "../assets/js/add-item-button.js";
+import {PantryFilter} from "../assets/js/pantry-filter.js";
 
 export default function PantryPage({ currentPath }) {
+  let selectedFilter = "all";
+  
+  const onFilterChange = (e) => {
+    selectedFilter = e.detail;
+    document.querySelector("app-pantry").filterType = selectedFilter;
+  };
+
   return html`
 
   <!--Main Content-->
@@ -12,28 +20,12 @@ export default function PantryPage({ currentPath }) {
         <add-item-button></add-item-button>
 
       <!--Search / filter-->
-        <ul class="properties-filter" style="margin-bottom: 24px;">
-          <li>
-            <a class="is_active" href="#!" data-filter="*">All</a>
-          </li>
-          <li>
-            <a href="#!" data-filter=".adv">Dairy</a>
-          </li>
-          <li>
-            <a href="#!" data-filter=".str">Meat</a>
-          </li>
-          <li>
-            <a href="#!" data-filter=".rac">Grains</a>
-          </li>
-          <li>
-            <a href="#!" data-filter=".rac">Produce</a>
-          </li>
-        </ul>
+        <pantry-filter
+          @filter-change=${onFilterChange}
+        ></pantry-filter>
 
       <!--Groups-->
-
-        
-          <app-pantry></app-pantry>
+          <app-pantry .filterType=${selectedFilter}></app-pantry>
 
         <div class="section"></div>
       </div>
