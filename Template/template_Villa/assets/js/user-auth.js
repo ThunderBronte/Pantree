@@ -2,9 +2,10 @@ import { html } from "lit";
 import { profileStore } from "./profile-store.js";
 
 export function renderAuth() {
+    
   return html`
-    <section>
-      <h1>Create an Account / Sign In</h1>
+    <section style="margin: 48; display: flex; flex-direction: column; padding: 48px; gap: 24px; justify-self: center;">
+      <h2>Create an Account / Sign In</h2>
 
       <label>
         Name
@@ -16,7 +17,14 @@ export function renderAuth() {
         <input id="email" type="email" />
       </label>
 
-      <button @click=${onSignIn}>
+      <button style="background-color: #CB2127;
+            color: white;
+            border: none;
+            padding: 12px 48px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: medium;
+            cursor: pointer;" @click=${onSignIn}>
         Sign In
       </button>
     </section>
