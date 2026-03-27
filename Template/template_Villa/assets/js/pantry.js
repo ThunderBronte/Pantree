@@ -15,9 +15,19 @@ export class AppPantry extends LitElement {
 
   async connectedCallback() {
     super.connectedCallback();
-    const res = await fetch("../../user-items.json");
-    const data = await res.json();
-    this.items = data.items;
+    const savedItems = localStorage.getItem("pantry-items");
+    if (savedItems) {
+      this.items = JSON.parse(savedItems);
+    } else {
+      const res = await fetch("../../user-items.json");
+      const data = await res.json();
+      this.items = data.items;
+      this.savedItems();
+    }
+  }
+
+  savedItems() {
+    localStorage.setItem("pantry-items", JSON.stringify(this.items));
   }
   
   filterByType(items) {
@@ -37,6 +47,7 @@ export class AppPantry extends LitElement {
           }
         : item
     );
+    this.savedItems();
   }
 
   decreaseItem(id) {
@@ -47,6 +58,7 @@ export class AppPantry extends LitElement {
           : item
       )
       .filter(item => item.count.length > 0);
+      this.savedItems();
   }
 
   
