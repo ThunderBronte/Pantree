@@ -1,13 +1,13 @@
 import { LitElement, html, css } from "lit";
 
-class PantryItem extends LitElement {
+class GroceryItem extends LitElement {
 
     createRenderRoot() {
         return super.createRenderRoot(); // disables Shadow DOM
     }
 
     static get tag() {
-        return "pantry-item";
+        return "grocery-item";
     }
 
     static get properties() {
@@ -19,6 +19,8 @@ class PantryItem extends LitElement {
     constructor() {
         super();
     }
+
+    
 
     static get styles() {
         return css`
@@ -37,7 +39,7 @@ class PantryItem extends LitElement {
                 padding: 16px 12px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
-            div.card.expiring {
+            /*div.card.expiring {
                 border: 2px solid #CB2127;
             }
             .expiring-badge {
@@ -50,7 +52,7 @@ class PantryItem extends LitElement {
                 margin: 4px 0px;
                 font-weight: bold;
                 width: fit-content;
-            }
+            } */
             p {
                 font-size: 10px; 
                 color: #666;
@@ -86,51 +88,46 @@ class PantryItem extends LitElement {
     decrease() {
         this.dispatchEvent(new CustomEvent("decrease", { bubbles: true }));
     }
+    
 
-    isExpSoon(exp) {
-        const expDate = new Date(`${exp.expMonth} ${exp.expDay}, ${exp.expYear}`);
-        const today = new Date();
-
-        today.setHours(0, 0, 0, 0);
-        const diffMs = expDate - today;
-        const diffDays = diffMs / (1000 * 60 * 60 * 24);
-
-        return diffDays >= 0 && diffDays <= 7;
+    openAddItem() {
+        this.dispatchEvent(new CustomEvent("add-to-fridge", {
+            detail: { item: this.item },
+            bubbles: true,
+            composed: true
+        }));
     }
 
     render() { 
-        const count = this.item.count.length;
-        const exp = this.item.count[0];
+    const count = this.item.count?.length || 0;
+    //const count = this.item.count || 0;
 
-        const expiringSoon = this.isExpSoon(exp);
+    return html`
+        <div class="card">
+            <div>
+                <h4>${this.item.name}</h4>
+                <p>${this.item.type}</p>
+            </div>
 
-        return html`
-            <div class="card ${expiringSoon ? 'expiring' : ''}">
-                <div>
-                    <h4>${this.item.name}</h4>
+            <div class="div-right">
+                <button @click=${() => this.decrease()}>-</button>
 
-                    ${expiringSoon
-                        ? html`<span class="expiring-badge">EXPIRING SOON</span>`
-                        :null
-                    }
-
-                    <p>${this.item.type} | Expires ${exp.expMonth} ${exp.expDay}</p>
+                <div style="text-align: center;">
+                    <h4 style="color: #CB2127">${count}</h4>
+                    <p>${this.item.unit}</p>
                 </div>
+
+                <button @click=${() => this.increase()}>+</button>
+
 
                 <div class="div-right">
-                    <button @click=${() => this.decrease()}>-</button>
-
-                    <div style="text-align: center; align-items: center;">
-                    <div><h4 style="color: #CB2127">${count}</h4></div>
-                    <p>${this.item.unit}</p>
-                    </div>
-
-                    <button @click=${() => this.increase()}>+</button>
+                    <button @click=${this.openAddItem}>✔</button>
                 </div>
             </div>
-        `;
+        </div>
+    `;
     }
 }
 
 //declare as a callable html element
-customElements.define(PantryItem.tag, PantryItem);
+customElements.define(GroceryItem.tag, GroceryItem);

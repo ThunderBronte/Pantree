@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
-import "./item.js";
+import "./grocery-item.js";
 
-export class AppPantry extends LitElement {
+export class GroceryList extends LitElement {
   static properties = {
     items: { type: Array },
     filterType: { type: String }
@@ -49,7 +49,7 @@ export class AppPantry extends LitElement {
       item.id === id
         ? {
             ...item,
-            count: [...item.count, { ...item.count[0] }]
+            count: [...item.count, {}]
           }
         : item
     );
@@ -68,8 +68,8 @@ export class AppPantry extends LitElement {
   }
 
   
-  itemsBySection(section= string) {
-    return this.filterByType(this.items.filter(item => item.section.toLowerCase() === section));
+  itemsBySection(section) {
+    return this.filterByType(this.items.filter(item => item?.section?.toLowerCase() === section));
   }
 
 
@@ -81,41 +81,87 @@ export class AppPantry extends LitElement {
 
     return items.map(
         item => html`
-          <pantry-item
+            <grocery-item
             .item=${item}
             @increase=${() => this.increaseItem(item.id)}
             @decrease=${() => this.decreaseItem(item.id)}
-          ></pantry-item>
+            @add-to-fridge=${this.handleCheckItem}>
+            </grocery-item>
         `
-    )
+    );
     }
 
-  render() {
-    return html`
-      <add-item-button @add-item=${e => this.addItem(e.detail)}></add-item-button>
-        <div class="row properties-box">
+    handleCheckItem(e) {
+        const selectedItem = e.detail.item;
 
+        const modal = this.renderRoot.querySelector("#addItemModal");
+        if (modal) {
+            // Pre-fill modal with selected item
+            modal.selectedItem = {
+            ...selectedItem,
+            count: [{ expDate: "" }] 
+            };
+            modal.status = "add";
+        }
+    }
+
+    handleAddItem(e) {
+        const { newItem, originalItemId } = e.detail;
+
+        // Ensure newItem has an id and section
+        if (!newItem.id) newItem.id = crypto.randomUUID();
+        if (!newItem.section) newItem.section = "fridge";
+
+        // Add new item to the list
+        this.items = [...this.items, newItem];
+
+        // Remove the original item ONLY if originalItemId exists
+        if (originalItemId) {
+            this.items = this.items.filter(item => item.id !== originalItemId);
+        }
+
+        this.savedItems();
+        }
+
+
+  render() {
+
+    
+    return html`
+        <add-item-button @add-item=${e => this.addItem(e.detail)}></add-item-button>
+        <div class="row properties-box">
+            <!--
+            <div style="margin-bottom: 12px;">
+                <h2 style="color:#CB2127;">All Items</h2>
+                ${this.renderItems(this.items)}
+            </div>
+            -->
+    
             <!--Pantry-->
             <div style="margin-bottom: 12px;">
                 <h2 style="color:#CB2127;">Pantry</h2>
                 ${this.renderItems(this.itemsBySection("pantry"))}
             </div>
 
-            <!--Fridge-->
+            <!--Fridge -->
             <div style="margin-bottom: 12px;">
                 <h2 style="color:#CB2127;">Fridge</h2>
                 ${this.renderItems(this.itemsBySection("fridge"))}
             </div>
 
-            <!--Freezer-->
+            <!-- Freezer -->
             <div style="margin-bottom: 12px;">
                 <h2 style="color:#CB2127;">Freezer</h2>
                 ${this.renderItems(this.itemsBySection("freezer"))}
             </div>
+            <!---->
+
+            
+
 
         </div>
     `;
   }
 }
 
-customElements.define("app-pantry", AppPantry);
+customElements.define("grocery-list", GroceryList);

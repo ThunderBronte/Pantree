@@ -17,7 +17,7 @@ export default function PantryPage({ currentPath }) {
   <!--Main Content-->
     <div class="section properties" style="margin:48px">
       <div class="container">
-        <add-item-button></add-item-button>
+        <!-- <add-item-button></add-item-button> -->
 
       <!--Search / filter-->
         <pantry-filter

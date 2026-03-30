@@ -78,33 +78,60 @@ export class AddItemButton extends LitElement {
 
         const form = e.target;
 
+        //get the exact info from the date
+        const expDateStr = form.expDate.value;
+        const expDateObj = new Date(expDateStr);
+        
+        const expYear = expDateObj.getFullYear();
+        const expMonth = expDateObj.getMonth() + 1;
+        const expDay = expDateObj.getDate();  
+
+        const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        const expMonthName = monthNames[expDateObj.getMonth()];
+
+
         const item = {
         id: crypto.randomUUID(),
         name: form.name.value,
         type: form.type.value,
         unit: form.unit.value,
-        section: form.section.value,
+        section: form.section.value || "pantry",
         added: new Date(),
         singleCost: 0,
         isFav: false,
         count: [
             {
                 expDate: form.expDate.value,
-            expMonth: "",
-            expDay: null,
-            expYear: null,
+            expMonth: expMonthName,
+            expDay: expDay,
+            expYear: expYear,
             expOnOpen: 7
             }
         ]
         };
 
-        this.dispatchEvent(
-        new CustomEvent("add-item", {
-            detail: item,
+        // this.dispatchEvent(
+        // new CustomEvent("add-item", {
+        //     detail: item,
+        //     bubbles: true,
+        //     composed: true
+        // })
+        // );
+
+        // this.dispatchEvent(new CustomEvent("add-item", {
+        //     detail: { newItem: item },
+        //     bubbles: true,
+        //     composed: true
+        // }));
+
+        this.dispatchEvent(new CustomEvent("add-item", {
+            detail: {
+                newItem: item,
+                originalItemId: this.selectedItem?.id
+            },
             bubbles: true,
             composed: true
-        })
-        );
+        }));
 
         this.closeCard();
     }
