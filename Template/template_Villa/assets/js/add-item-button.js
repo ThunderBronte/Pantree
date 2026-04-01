@@ -1,6 +1,15 @@
 import { LitElement, html, css } from "lit";
 import "./search-bar.js";
 
+const TYPE_ICONS = {
+    Dairy: 'assets/images/milk-box.png',
+    Meat: 'assets/images/proteins.png',
+    Greens: 'assets/images/vegetable.png',
+    Fruit: 'assets/images/harvest.png',
+    Oil: 'assets/images/olive-oil.png',
+    Grains: 'assets/images/rice.png'
+}
+
 export class AddItemButton extends LitElement {
 
     createRenderRoot() {
@@ -52,6 +61,9 @@ export class AddItemButton extends LitElement {
             width: 300px;
             justify-items: center;
         }
+        img {
+            width: 64px;
+        }
 
         input, select {
             width: 100%;
@@ -59,6 +71,10 @@ export class AddItemButton extends LitElement {
             padding: 6px;
         }
     `;
+
+    getTypeIcon(type) {
+        return TYPE_ICONS[type] ?? 'assets/images/default.png';
+    }
 
     openCard() {
         this.status = "open";
@@ -158,6 +174,15 @@ export class AddItemButton extends LitElement {
                     `
                     : html`
                         <form @submit=${this.submit}>
+                            
+                            ${this.selectedItem?.type ? html`
+                            <img
+                                class="item-icon"
+                                src=${this.getTypeIcon(this.selectedItem.type)}
+                                alt=${this.selectedItem.type}
+                            />
+                            ` : null}
+
                             <input name="name" placeholder="Type Name" required .value=${this.selectedItem?.name ?? ""}/>
                             <select name="type">
                                 <option value="" disabled selected>Select Type</option>
