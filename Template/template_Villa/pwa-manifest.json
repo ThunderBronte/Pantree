@@ -7,15 +7,15 @@
     "display": "standalone",
     "icons": [
         {
-            "src": "assets/images/Pantree192.png",
+            "src": "assets/images/Logo192.png",
             "sizes": "192x192"
         },
         {
-            "src": "assets/images/Pantree256.png",
+            "src": "assets/images/Logo256.png",
             "sizes": "256x256"
         },
         {
-            "src": "assets/images/Pantree512.png",
+            "src": "assets/images/Logo512.png",
             "sizes": "512x512"
         }
     ]

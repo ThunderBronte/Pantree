@@ -4,7 +4,7 @@ import { LitElement, html, css } from "lit";
 const FOOTER_LINKS = [
     {name: 'My Pantry', path: '/pantry', icon: 'assets/images/pantry.svg'},
     {name: 'My Lists', path: '/my-lists', icon: 'assets/images/list.svg'},
-    {name: 'Recipes', path: '/recipes', icon: 'assets/images/recipes.svg'},
+    {name: 'Recipes', path: '/recipes', icon: 'assets/images/recipe.svg'},
     {name: 'Profile', path: '/profile', icon: 'assets/images/profile.svg'},
 ];
 
@@ -38,6 +38,13 @@ class AppFooter extends LitElement {
     _isActive(path) {
         const current = this._base(this.currentPath);
         return path === '/' ? current === '/' : current.startsWith(path);
+    }
+
+    _getIcon(link) {
+        if (this._isActive(link.path)) {
+            return link.icon.replace('.svg', '-red.svg');
+        }
+        return link.icon;
     }
 
     _go(path) {
@@ -106,7 +113,7 @@ class AppFooter extends LitElement {
                     @click=${() => this._go(link.path)}
                 >
                     <img
-                    src="${link.icon}"
+                    src="${this._getIcon(link)}"
                     alt="${link.name}"
                     class="icon"
                     >
