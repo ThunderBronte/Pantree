@@ -15,7 +15,7 @@ export default function PantryPage({ currentPath }) {
   return html`
 
   <!--Main Content-->
-    <div class="section properties" style="margin:48px">
+    <div class="section properties" style="margin-bottom:48px; margin-top:48px;">
       <div class="container">
         <!-- <add-item-button></add-item-button> -->
 

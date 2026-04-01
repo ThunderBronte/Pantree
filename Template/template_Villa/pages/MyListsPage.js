@@ -16,7 +16,7 @@ export default function MyListsPage({ currentPath }) {
   return html`
 
   <!--Main Content-->
-    <div class="section properties" style="margin:48px">
+    <div class="section properties" style="margin-bottom:48px; margin-top:48px;">
       <div class="container">
         <!-- Grocery List -->
         <div style="margin-bottom: 12px;">

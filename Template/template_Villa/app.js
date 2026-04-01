@@ -98,7 +98,7 @@ createRenderRoot() {
     }
   }
 
-  render() {
+  /*render() {
     return html`
       <div class="container">
 
@@ -113,7 +113,28 @@ createRenderRoot() {
       >
       </app-footer>
     `;
-  }
+  }*/
+
+  render() {
+  const isHomePage = this.currentPath === "/";
+
+  return html`
+    <div class="container">
+      <main class="content">
+        ${this.renderPage()}
+      </main>
+    </div>
+
+    ${!isHomePage
+      ? html`
+          <app-footer
+            .currentPath=${this.currentPath}
+            .onNavigate=${this.navigate}
+          ></app-footer>
+        `
+      : null}
+  `;
+}
 }
 
 customElements.define("app-root", App);

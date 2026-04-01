@@ -8,6 +8,7 @@ export const profileStore = {
         const cached = localStorage.getItem("profile");
         if (cached) {
             this.user = JSON.parse(cached);
+            window.dispatchEvent(new CustomEvent("profile-changed"));
         }
 
         this.loading = false;

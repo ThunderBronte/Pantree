@@ -34,7 +34,10 @@ class PantryFilter extends LitElement {
     static get styles() {
         return css`
         div {
+            display: flex;
+            flex-wrap: wrap;
             margin: 24px;
+            gap: 12px;
         }
         button {
             background-color: #1E1E1E;

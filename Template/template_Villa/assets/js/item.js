@@ -40,6 +40,9 @@ class PantryItem extends LitElement {
             div.card.expiring {
                 border: 2px solid #CB2127;
             }
+            div.card.expired {
+                background-color: #FFC1C3;
+            }
             .expiring-badge {
                 display: inline-block;
                 background-color: #CB2127;
@@ -98,23 +101,43 @@ class PantryItem extends LitElement {
         return diffDays >= 0 && diffDays <= 7;
     }
 
+    isExp(exp) {
+        const expDate = new Date(`${exp.expMonth} ${exp.expDay}, ${exp.expYear}`);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const diffMs = expDate - today;
+        const diffDays = diffMs / (1000 * 60 * 60 * 24);
+
+        return diffDays <= 0;
+    }
+
     render() { 
         const count = this.item.count.length;
         const exp = this.item.count[0];
 
         const expiringSoon = this.isExpSoon(exp);
 
+        const expired = this.isExp(exp);
+
         return html`
-            <div class="card ${expiringSoon ? 'expiring' : ''}">
+            <div class="card ${expiringSoon ? 'expiring': ''} ${expired ? 'expired': ''}">
                 <div>
                     <h4>${this.item.name}</h4>
 
-                    ${expiringSoon
-                        ? html`<span class="expiring-badge">EXPIRING SOON</span>`
-                        :null
-                    }
+                    
+                ${(expiringSoon || expired) ? html`
+                    <span class="expiring-badge">
+                        ${expired ? 'EXPIRED' : 'EXPIRING SOON'}
+                    </span>
+                    ` : null}
 
-                    <p>${this.item.type} | Expires ${exp.expMonth} ${exp.expDay}</p>
+
+                    ${(expiringSoon || expired) ? html`
+                    <p>
+                        ${this.item.type} | ${expired ? 'Expired' : 'Expires'} ${exp.expMonth} ${exp.expDay}
+                    </p>
+                    ` : null}
+                    
                 </div>
 
                 <div class="div-right">

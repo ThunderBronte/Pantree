@@ -1,11 +1,11 @@
 import { html } from "lit";
 import { profileStore } from "./profile-store.js";
 
-export function renderAuth() {
+export function renderAuth(mode = "create") {
     
   return html`
     <section style="margin: 48; display: flex; flex-direction: column; padding: 48px; gap: 24px; justify-self: center;">
-      <h2>Create an Account / Sign In</h2>
+      <h2>${mode === "login" ? "Login" : "Create Account"}</h2>
 
       <label>
         Name
@@ -25,16 +25,16 @@ export function renderAuth() {
             font-size: 16px;
             font-weight: medium;
             cursor: pointer;" @click=${onSignIn}>
-        Sign In
+        ${mode === "login" ? "Login" : "Sign Up"}
       </button>
     </section>
   `;
 }
 
-export function onSignIn() {
-    const form = event.target.closest("section");
+export function onSignIn(event) {
+  const form = event.target.closest("section");
   const name = form.querySelector("#name").value;
-  const email = document.querySelector("#email").value;
+  const email = form.querySelector("#email").value;
 
   if (!name || !email) {
     alert("Please enter name and email");

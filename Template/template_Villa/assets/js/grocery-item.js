@@ -20,8 +20,6 @@ class GroceryItem extends LitElement {
         super();
     }
 
-    
-
     static get styles() {
         return css`
             :host {
@@ -64,7 +62,7 @@ class GroceryItem extends LitElement {
             .div-right {
                 display: flex; 
                 align-items: center; 
-                gap: 24px;
+                gap: 12px;
             }
             button {
                 text-align: center;
@@ -96,6 +94,7 @@ class GroceryItem extends LitElement {
             bubbles: true,
             composed: true
         }));
+        console.log("button clicked");
     }
 
     render() { 
@@ -119,10 +118,8 @@ class GroceryItem extends LitElement {
 
                 <button @click=${() => this.increase()}>+</button>
 
+                <button @click=${this.openAddItem}>✔</button>
 
-                <div class="div-right">
-                    <button @click=${this.openAddItem}>✔</button>
-                </div>
             </div>
         </div>
     `;

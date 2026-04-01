@@ -79,7 +79,7 @@ class AppHeader extends LitElement {
         <div class="main-nav">
             <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px;">
                 <img src="./assets/images/Logo.svg" alt="Pantree Logo" width="40" height="40">
-                <h1>Pantree</h1>
+                <h1 style="color: #CB2127">Pantree</h1>
             </a>
 
             <a class="menu-trigger">
