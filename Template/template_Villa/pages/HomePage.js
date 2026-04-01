@@ -13,16 +13,37 @@ export default function HomePage({ currentPath }) {
 
   ${user
     ? html`
-      <div>
+      <div style="margin: 24px; text-align: center;">
         <h4>Welcome back, ${user.name}</h4>
       </div>
 
-      <ul>
-        <li><a href="#/pantry">My Pantry</a></li>
-        <li><a href="#/my-lists">My Lists</a></li>
-        <li><a href="#/recipes">Recipes</a></li>
-        <li><a href="#/profile">Profile</a></li>
+      <ul style="display: flex; flex-direction: column; gap: 12px; text-align: center; justify-self: center; width: 100%; padding: 0px 48px;">
+        <li style="padding: 12px; background-color: #CB2127; border-radius: 8px; justify-items: center;">
+          <a href="#/pantry" style="color: white; display: flex; align-items: center;">
+            <img src="./assets/images/pantry-white.svg" style="height: 48px;">
+            My Pantry
+          </a>
+        </li>
+        <li style="padding: 12px; background-color: #CB2127; border-radius: 8px; justify-items: center;">
+          <a href="#/my-lists" style="color: white; display: flex; align-items: center;">
+            <img src="./assets/images/list-white.svg" style="height: 48px; padding-right: 8px;">
+            My Lists
+          </a>
+        </li>
+        <li style="padding: 12px; background-color: #CB2127; border-radius: 8px; justify-items: center;">
+          <a href="#/recipes" style="color: white; display: flex; align-items: center;">
+            <img src="./assets/images/recipe-white.svg" style="height: 48px; padding-right: 8px;">
+            Recipes
+          </a>
+        </li>
+        <li style="padding: 12px; background-color: #CB2127; border-radius: 8px; justify-items: center;">
+          <a href="#/profile" style="color: white; display: flex; align-items: center;">
+            <img src="./assets/images/profile-white.svg" style="height: 48px; padding-right: 8px; ">
+            Profile
+          </a>
+        </li>
       </ul>
+      <div style="margin-bottom: 48px;"></div>
     `
     : html`
       <div style="text-align: center;">
