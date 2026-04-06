@@ -1,0 +1,86 @@
+{
+    "recipes": [
+        {
+            "id": "1",
+            "title": "Cacio e pepe",
+            "blog": "NYT Cooking",
+            "author": "Mark Bittman",
+            "url": "https://cooking.nytimes.com/recipes/1017304-cacio-e-pepe",
+            "tags": [
+                "peanut-free",
+                "treenut-free",
+                "vegetarian",
+                "halal"
+            ],
+            "rating": 4,
+            "servings": 4,
+            "totalTime": "20 min",
+
+            "ingredients": [ 
+                {
+                    "name": "Parmesan",
+                    "num": 1
+                },
+                {
+                    "name": "Spaghetti",
+                    "num": 1
+                },
+                {
+                    "name": "Heavy Cream",
+                    "num": 1
+                },
+                {
+                    "name": "Salt & Pepper",
+                    "num": 1
+                }
+            ]
+        },
+
+        {
+            "id": "2",
+            "title": "Fettuccine carbonara",
+            "blog": "Taste of Home",
+            "author": "Kristine Chayes",
+            "url": "https://www.tasteofhome.com/recipes/fettuccine-carbonara/",
+            "tags": [
+                "peanut-free",
+                "treenut-free"
+            ],
+            "rating": 3.5,
+            "servings": 6,
+            "totalTime": "30 min",
+
+            "ingredients": [ 
+                {
+                    "name": "Bacon",
+                    "num": 0.5
+                },
+                {
+                    "name": "Fettuccine",
+                    "num": 1
+                },
+                {
+                    "name": "Onion",
+                    "num": 1
+                },
+                {
+                    "name": "Garlic Clove",
+                    "num": 2
+                },
+                {
+                    "name": "Egg",
+                    "num": 4
+                },
+                {
+                    "name": "Salt & Pepper",
+                    "num": 1
+                },
+                {
+                    "name": "Grated Romano Cheese",
+                    "num": 1
+                }
+            ]
+        }
+    ]
+    
+}
