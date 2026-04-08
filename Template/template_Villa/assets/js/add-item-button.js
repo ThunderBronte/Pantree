@@ -173,6 +173,7 @@ export class AddItemButton extends LitElement {
                         <button @click=${this.openForm}>New Item</button>
                     `
                     : html`
+                    <!--form for item detail that needs revising for styles-->
                         <form @submit=${this.submit}>
                             
                             ${this.selectedItem?.type ? html`

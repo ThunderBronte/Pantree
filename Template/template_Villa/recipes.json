@@ -5,6 +5,7 @@
             "title": "Cacio e pepe",
             "blog": "NYT Cooking",
             "author": "Mark Bittman",
+            "thumbnail": "https://static01.nyt.com/images/2024/11/25/multimedia/Cacio-e-Peperex-bcjl/Cacio-e-Peperex-bcjl-jumbo.jpg?quality=75&auto=webp",
             "url": "https://cooking.nytimes.com/recipes/1017304-cacio-e-pepe",
             "tags": [
                 "peanut-free",
@@ -41,6 +42,7 @@
             "title": "Fettuccine carbonara",
             "blog": "Taste of Home",
             "author": "Kristine Chayes",
+            "thumbnail": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Fettuccine-Carbonara_EXPS_FT24_175448_ST_0405_2.jpg?fit=750%2C750",
             "url": "https://www.tasteofhome.com/recipes/fettuccine-carbonara/",
             "tags": [
                 "peanut-free",

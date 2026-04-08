@@ -2,7 +2,7 @@ import { LitElement, css, html } from "lit";
 
 class RecipeFilter extends LitElement {
   createRenderRoot() {
-    return this; // disable shadow DOM
+    return super.createRenderRoot(); // disable shadow DOM
   }
 
   static get tag() {
@@ -29,7 +29,8 @@ class RecipeFilter extends LitElement {
     );
   }
 
-  static styles = css`
+  static get styles() {
+    return css`
     div {
       display: flex;
       flex-wrap: wrap;
@@ -40,14 +41,16 @@ class RecipeFilter extends LitElement {
       background: #1e1e1e;
       color: white;
       border: none;
-      padding: 12px 24px;
+      padding: 6px 12px;
       border-radius: 40px;
       cursor: pointer;
+      font-size: 10px;
     }
     button.is_active {
       background: #cb2127;
     }
   `;
+  }
 
   render() {
     const tags = [
@@ -63,7 +66,7 @@ class RecipeFilter extends LitElement {
     ];
 
     return html`
-      <div>
+      <div class="properties-filter">
         ${tags.map(
           tag => html`
             <button

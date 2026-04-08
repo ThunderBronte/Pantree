@@ -1,7 +1,10 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, css} from "lit";
 import "./recipe-item.js";
 
 export class AppRecipes extends LitElement {
+  createRenderRoot() {
+    return super.createRenderRoot();
+  }
   static properties = {
     recipes: { type: Array },
     filterTag: { type: String }
@@ -11,6 +14,19 @@ export class AppRecipes extends LitElement {
     super();
     this.recipes = [];
     this.filterTag = "all";
+  }
+
+  static get styles() {
+    return css`
+      :host {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      section {
+        display: flex;
+        gap: 24px;
+      }
+    `;
   }
 
   async connectedCallback() {

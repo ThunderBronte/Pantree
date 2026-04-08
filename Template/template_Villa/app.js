@@ -9,6 +9,7 @@ import PantryPage from "./pages/PantryPage.js";
 import MyLists from "./pages/MyListsPage.js";
 import ProfilePage from "./pages/ProfilePage.js";
 import LoginPage from "./pages/LoginPage.js";
+import RecipeDetailPage from "./pages/RecipeDetailPage.js";
 ///import ProfileEditPage from "./pages/ProfileEditPage.js";
 import './assets/js/app-header.js';
 
@@ -47,8 +48,7 @@ createRenderRoot() {
   }
 
   getPathFromHash() {
-    const fullHash = window.location.hash.slice(1) || "/";
-    return fullHash.split("#")[0];
+    return window.location.hash.slice(1) || "/";
   }
 
   handleHashChange() {
@@ -80,6 +80,14 @@ createRenderRoot() {
 
       case basePath.startsWith("/my-lists"):
         return MyLists({ currentPath: this.currentPath });
+
+      case basePath.startsWith("/recipes/"): {
+        const slug = basePath
+          .replace("/recipes/", "")
+          .replace(/\/$/, "");
+
+        return RecipeDetailPage({ slug });
+      }
 
       case basePath.startsWith("/recipes"):
         return RecipesPage({ currentPath: this.currentPath });

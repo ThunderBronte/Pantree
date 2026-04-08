@@ -1,8 +1,15 @@
 import { html } from "lit";
 import "../assets/js/recipe-filter.js";
-import "../assets/js/recipes.js";
+import "../recipes.json";
 
-export default function RecipesPage() {
+export default function RecipeDetailPage({ slug }) {
+  const recipe = recipes.find(r => r.slug === slug);
+
+  
+  if (!recipe) {
+    return html`<p>Recipe not found</p>`;
+  }
+
   const onFilterChange = (e) => {
     const recipes = document.querySelector("app-recipes");
     if (recipes) {
