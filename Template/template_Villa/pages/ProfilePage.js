@@ -3,6 +3,37 @@ import {profileStore} from "../assets/js/profile-store.js";
 import { onInput, onSave, onSignOut } from "../assets/js/profileHandlers.js";
 import {renderAuth, onSignIn} from "../assets/js/user-auth.js";
 
+const styles = `
+  button {
+    background-color: #CB2127;
+    color: white;
+    border: none;
+    padding: 12px 48px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: medium;
+    cursor: pointer;
+  }
+    section {
+      margin: 48px;
+      display: flex;
+      flex-direction: column;
+      padding: 48px;
+      gap: 24px;
+      justify-content: center;
+      align-items: center;
+    }
+      .profile-card {
+        background-color: white;
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        justify-items: center;
+        align-content: center;
+        text-align: center;
+      }
+`;
+
 export default function ProfilePage({ currentPath }) {
   if (!profileStore.user && !profileStore.loading) {
     profileStore.load();
@@ -18,8 +49,9 @@ export default function ProfilePage({ currentPath }) {
 
   function renderProfile() {
     return html`
-      <section style="margin: 48; display: flex; flex-direction: column; padding: 48px; gap: 24px; justify-content: center; align-items: center;">
-        <div style="background-color: white; border-radius: 24px; padding: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); justify-items: center; align-content: center; text-align: center;">
+    <style>${styles}</style>
+      <section>
+        <div class="profile-card">
           <img src="https://www.billboard.com/wp-content/uploads/2025/02/lady-gaga-snl50-red-carpet-billboard-1548.jpg?w=942&h=623&crop=1" style="width: 80px; height: 80px;border-radius: 100px; margin-bottom: 12px;">
           <h5 style="color: #CB2127">Sarah Johnson</h5>
           <p>Member since Feb 2026</p>
@@ -80,7 +112,6 @@ export default function ProfilePage({ currentPath }) {
         </div>
 
         <div style="margin-bottom: 48px;"></div>
-        
 
       </section>
     `;

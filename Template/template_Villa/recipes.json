@@ -16,8 +16,22 @@
             "rating": 4,
             "servings": 4,
             "totalTime": "20 min",
-
-            "ingredients": [ 
+            "printContent": {
+                "ingredients": [
+                    "Salt",
+                    "1½ cups finely grated Pecorino Romano, plus more for dusting",
+                    "1 cup finely grated Parmigiano-Reggiano",
+                    "1 tablespoon ground black pepper, plus more for finishing",
+                    "¾ pound tonnarelli or other long pasta like linguine or spaghetti",
+                    "Good olive oil"
+                ],
+                "steps": [
+                    "Put a pot of salted water on to boil. In a large bowl, combine the cheeses and black pepper; mash with just enough cold water to make a thick paste. Spread the paste evenly in the bowl.",
+                    "Once the water is boiling, add the pasta. The second before it is perfectly cooked (taste it frequently once it begins to soften), reserve a cup or so of the cooking water, then use tongs to quickly transfer the pasta to the bowl. Stir vigorously to coat the pasta, adding a teaspoon or two of olive oil and a bit of the pasta cooking water to thin the sauce if necessary. The sauce should cling to the pasta and be creamy but not watery.",
+                    "Plate and dust each dish with additional pecorino and pepper. Serve immediately."
+                ]
+            },
+            "ingredients": [
                 {
                     "name": "Parmesan",
                     "num": 1
@@ -44,6 +58,27 @@
             "author": "Kristine Chayes",
             "thumbnail": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Fettuccine-Carbonara_EXPS_FT24_175448_ST_0405_2.jpg?fit=750%2C750",
             "url": "https://www.tasteofhome.com/recipes/fettuccine-carbonara/",
+            "printContent": {
+                "ingredients": [
+                    "1/2 pound bacon strips, chopped",
+                    "1 package (16 ounces) fettuccine",
+                    "1 small onion, finely chopped",
+                    "2 garlic cloves, minced",
+                    "1 cup half-and-half cream",
+                    "4 large eggs, lightly beaten",
+                    "1/2 cup grated Romano cheese",
+                    "1/2 teaspoon salt",
+                    "1/4 teaspoon pepper",
+                    "1 tablespoon minced fresh parsley",
+                    "Additional grated Romano cheese, optional"
+                ],
+                "steps": [
+                    "In a large skillet, cook bacon over medium heat until crisp, stirring occasionally. Remove with a slotted spoon; drain on paper towels. Discard drippings, reserving 1 tablespoon in skillet.",
+                    "Meanwhile, in a Dutch oven, cook fettuccine according to package directions. Drain; return to pan.",
+                    "Add onion to drippings in skillet; cook and stir over medium heat 2-3 minutes or until tender. Add garlic; cook 1 minute longer. Reduce heat to medium-low. Stir in cream. In a small bowl, whisk a small amount of warm cream into eggs; return all to skillet, whisking constantly. Cook 8-10 minutes or until a thermometer reads 160°, stirring constantly.",
+                    "Stir cheese, salt, pepper and bacon into sauce. Add to fettuccine and toss to combine. Sprinkle with parsley and, if desired, additional cheese. Serve immediately."
+                ]
+            },
             "tags": [
                 "peanut-free",
                 "treenut-free"
@@ -52,7 +87,7 @@
             "servings": 6,
             "totalTime": "30 min",
 
-            "ingredients": [ 
+            "ingredients": [
                 {
                     "name": "Bacon",
                     "num": 0.5
@@ -84,5 +119,5 @@
             ]
         }
     ]
-    
+
 }
