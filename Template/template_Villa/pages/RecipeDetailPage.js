@@ -209,6 +209,7 @@ class RecipeDetail extends LitElement {
     this.checkedIngredients = [];
     this.pantryItems = [];
     this.groceryItems = [];
+    this.referenceItems = [];
     this._onSavedChanged = () => {
       this._savedIds = JSON.parse(localStorage.getItem("saved-recipes") || "[]");
     };
@@ -239,9 +240,14 @@ class RecipeDetail extends LitElement {
 
   async connectedCallback() {
     super.connectedCallback();
-    const res = await fetch("../../recipes.json");
-    const data = await res.json();
+    const [recipeRes, itemsRes] = await Promise.all([
+      fetch("../../recipes.json"),
+      fetch("../../items.json")
+    ]);
+    const data = await recipeRes.json();
+    const itemsData = await itemsRes.json();
     this.recipe = data.recipes.find(r => this.slugify(r.title) === this.slug) ?? null;
+    this.referenceItems = itemsData.items;
 
     this.pantryItems = JSON.parse(localStorage.getItem("pantry-items") || "[]");
     this.groceryItems = JSON.parse(localStorage.getItem("grocery-items") || "[]");
@@ -292,17 +298,30 @@ class RecipeDetail extends LitElement {
           count: [...list[existingIndex].count, {}]
         };
       } else {
+        const ref = this.referenceItems.find(
+          r => r.name.toLowerCase() === name.toLowerCase()
+        );
+        const expOnOpen = ref?.count?.[0]?.expOnOpen ?? 7;
+        const expDate = new Date();
+        expDate.setDate(expDate.getDate() + expOnOpen);
+        const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
         list.push({
           id: crypto.randomUUID(),
           name,
-          type: "Produce",
-          unit: "piece",
+          type: ref?.type ?? "Produce",
+          unit: ref?.unit ?? "each",
           section: "recipe",
           recipeTitle,
           added: new Date().toISOString(),
-          singleCost: 0,
+          singleCost: ref?.singleCost ?? 0,
           isFav: false,
-          count: [{ expDate: "", expMonth: "", expDay: 0, expYear: 0, expOnOpen: 7 }]
+          count: [{
+            expDate: expDate.toISOString().split("T")[0],
+            expMonth: monthNames[expDate.getMonth()],
+            expDay: expDate.getDate(),
+            expYear: expDate.getFullYear(),
+            expOnOpen
+          }]
         });
       }
     }

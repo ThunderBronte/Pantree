@@ -182,7 +182,11 @@ export class AppPantry extends LitElement {
   
   getExpDateValue(item) {
     const exp = item?.count?.[0];
-    if (!exp) return "";
+    if (!exp) {
+      const d = new Date();
+      d.setDate(d.getDate() + 7);
+      return d.toISOString().split("T")[0];
+    }
     if (exp.expDate) return exp.expDate;
     if (exp.expYear && exp.expMonth && exp.expDay) {
       const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -192,7 +196,10 @@ export class AppPantry extends LitElement {
         return d.toISOString().split("T")[0];
       }
     }
-    return "";
+    const expOnOpen = exp.expOnOpen ?? 7;
+    const d = new Date();
+    d.setDate(d.getDate() + expOnOpen);
+    return d.toISOString().split("T")[0];
   }
 
   submitEdit(e) {
@@ -294,7 +301,9 @@ export class AppPantry extends LitElement {
     return html`
       <div class="top-bar">
         <add-item-button @add-item=${e => this.addItem(e.detail)}></add-item-button>
-        <button class="remove-btn" @click=${() => { this._showConfirm = true; }}>Remove Expired Items</button>
+        ${this.items.some(item => this.isExpired(item))
+          ? html`<button class="remove-btn" @click=${() => { this._showConfirm = true; }}>Remove Expired Items</button>`
+          : null}
       </div>
 
       ${this._showConfirm ? html`
@@ -322,6 +331,7 @@ export class AppPantry extends LitElement {
                 <option value="Meat"    ?selected=${this._editItem.type === "Meat"}>Meat</option>
                 <option value="Grains"  ?selected=${this._editItem.type === "Grains"}>Grains</option>
                 <option value="Produce" ?selected=${this._editItem.type === "Produce"}>Produce</option>
+                <option value="Spice"   ?selected=${this._editItem.type === "Spice"}>Spice</option>
               </select>
 
               <select name="unit">
@@ -330,7 +340,7 @@ export class AppPantry extends LitElement {
                 <option value="box"    ?selected=${this._editItem.unit === "box"}>Box</option>
                 <option value="block"  ?selected=${this._editItem.unit === "block"}>Block</option>
                 <option value="gallon" ?selected=${this._editItem.unit === "gallon"}>Gallon</option>
-                <option value="piece"  ?selected=${this._editItem.unit === "piece"}>Piece</option>
+                <option value="each"   ?selected=${this._editItem.unit === "each"}>Each</option>
                 <option value="quart"  ?selected=${this._editItem.unit === "quart"}>Quart</option>
                 <option value="liter"  ?selected=${this._editItem.unit === "liter"}>Liter</option>
                 <option value="lbs"    ?selected=${this._editItem.unit === "lbs"}>lbs</option>

@@ -50,6 +50,7 @@ export class AddItemButton extends LitElement {
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 1000;
         }
 
         .card {
@@ -157,6 +158,15 @@ export class AddItemButton extends LitElement {
         this.status = "add"; // reuse the form view
     }
 
+    defaultExpDate(item) {
+        const existing = item?.count?.[0]?.expDate;
+        if (existing) return existing;
+        const expOnOpen = item?.count?.[0]?.expOnOpen ?? 7;
+        const d = new Date();
+        d.setDate(d.getDate() + expOnOpen);
+        return d.toISOString().split("T")[0];
+    }
+
     render() {
         return html`
         <button @click=${this.openCard}>+ Add Item</button>
@@ -187,10 +197,11 @@ export class AddItemButton extends LitElement {
                             <input name="name" placeholder="Type Name" required .value=${this.selectedItem?.name ?? ""}/>
                             <select name="type">
                                 <option value="" disabled selected>Select Type</option>
-                                <option value="Diary" ?selected=${this.selectedItem?.type === "Dairy"}>Dairy</option>
+                                <option value="Dairy" ?selected=${this.selectedItem?.type === "Dairy"}>Dairy</option>
                                 <option value="Meat" ?selected=${this.selectedItem?.type === "Meat"}>Meat</option>
                                 <option value="Grains" ?selected=${this.selectedItem?.type === "Grains"}>Grains</option>
                                 <option value="Produce" ?selected=${this.selectedItem?.type === "Produce"}>Produce</option>
+                                <option value="Spice" ?selected=${this.selectedItem?.type === "Spice"}>Spice</option>
                             </select>
 
                             <select name="unit">
@@ -199,7 +210,7 @@ export class AddItemButton extends LitElement {
                                 <option value="box" ?selected=${this.selectedItem?.unit === "box"}>Box</option>
                                 <option value="block" ?selected=${this.selectedItem?.unit === "block"}>Block</option>
                                 <option value="gallon" ?selected=${this.selectedItem?.unit === "gallon"}>Gallon</option>
-                                <option value="piece" ?selected=${this.selectedItem?.unit === "piece"}>Piece</option>
+                                <option value="each" ?selected=${this.selectedItem?.unit === "each"}>Each</option>
                                 <option value="quart" ?selected=${this.selectedItem?.unit === "quart"}>Quart</option>
                                 <option value="liter" ?selected=${this.selectedItem?.unit === "liter"}>Liter</option>
                                 <option value="lbs" ?selected=${this.selectedItem?.unit === "lbs"}>lbs</option>
@@ -217,7 +228,7 @@ export class AddItemButton extends LitElement {
                             </select>
 
                             <label>Expiration Date: </label>
-                            <input name="expDate" type="date" .value=${this.selectedItem?.count?.[0]?.expDate ?? ""}>
+                            <input name="expDate" type="date" .value=${this.defaultExpDate(this.selectedItem)}>
 
                             <div style="display: flex; justify-content: space-between;">
                                 <button class="back-button" @click=${this.back}>Back</button>

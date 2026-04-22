@@ -158,7 +158,10 @@ class PantryItem extends LitElement {
         const diffMs = expDate - today;
         const diffDays = diffMs / (1000 * 60 * 60 * 24);
 
-        return diffDays >= 0 && diffDays <= 7;
+        const section = this.item?.section?.toLowerCase();
+        const threshold = (section === "fridge" || section === "freezer") ? 3 : 7;
+
+        return diffDays >= 0 && diffDays <= threshold;
     }
 
     isExp(exp) {
@@ -203,7 +206,9 @@ class PantryItem extends LitElement {
                     <p>
                         ${this.item.type} | ${expired ? 'Expired' : 'Expires'} ${exp.expMonth} ${exp.expDay}
                     </p>
-                    ` : null}
+                    ` : html`
+                    <p>${this.item.type} | Expires on ${exp.expMonth} ${exp.expDay}, ${exp.expYear}</p>
+                    `}
                     
                 </div>
 
