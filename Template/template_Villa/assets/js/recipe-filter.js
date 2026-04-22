@@ -10,12 +10,28 @@ class RecipeFilter extends LitElement {
   }
 
   static properties = {
-    active: { type: String }
+    active: { type: String },
+    _savedCount: { type: Number }
   };
 
   constructor() {
     super();
     this.active = "all";
+    this._savedCount = 0;
+    this._onSavedChanged = () => {
+      this._savedCount = JSON.parse(localStorage.getItem("saved-recipes") || "[]").length;
+    };
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._savedCount = JSON.parse(localStorage.getItem("saved-recipes") || "[]").length;
+    window.addEventListener("saved-recipes-changed", this._onSavedChanged);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener("saved-recipes-changed", this._onSavedChanged);
   }
 
   selectFilter(type) {
@@ -77,6 +93,14 @@ class RecipeFilter extends LitElement {
             </button>
           `
         )}
+        ${this._savedCount > 0 ? html`
+          <button
+            class=${this.active === "saved" ? "is_active" : ""}
+            @click=${() => this.selectFilter("saved")}
+          >
+            ♥ Saved
+          </button>
+        ` : null}
       </div>
     `;
   }

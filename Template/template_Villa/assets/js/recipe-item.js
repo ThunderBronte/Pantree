@@ -110,6 +110,10 @@ class RecipeItem extends LitElement {
     }
   `;
 
+  slugify(text) {
+    return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+
   get recipeUrl() {
     const slug = this.slugify(this.recipe.title);
     return `/recipes/${slug}`;
@@ -140,7 +144,7 @@ class RecipeItem extends LitElement {
     if (!this.recipe) return html``;
 
     return html`
-      <div class="card" @click=${()=> window.location.hash="${this.recipeUrl}"}>
+      <div class="card" @click=${() => { window.location.hash = this.recipeUrl; }}>
         <img src=${this.recipe.thumbnail}>
         <div class="credit">
           <a href=${this.recipe.url}>${this.recipe.blog}</a>

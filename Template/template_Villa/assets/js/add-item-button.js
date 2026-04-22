@@ -196,6 +196,7 @@ export class AddItemButton extends LitElement {
                             <select name="unit">
                                 <option value="" disabled selected>Select Unit</option>
                                 <option value="bag" ?selected=${this.selectedItem?.unit === "bag"}>Bag</option>
+                                <option value="box" ?selected=${this.selectedItem?.unit === "box"}>Box</option>
                                 <option value="block" ?selected=${this.selectedItem?.unit === "block"}>Block</option>
                                 <option value="gallon" ?selected=${this.selectedItem?.unit === "gallon"}>Gallon</option>
                                 <option value="piece" ?selected=${this.selectedItem?.unit === "piece"}>Piece</option>

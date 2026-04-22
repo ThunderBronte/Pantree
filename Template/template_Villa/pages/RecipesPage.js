@@ -1,6 +1,7 @@
 import { html } from "lit";
 import "../assets/js/recipe-filter.js";
 import "../assets/js/recipes.js";
+import "../assets/js/recipe-search-bar.js";
 
 export default function RecipesPage() {
   const onFilterChange = (e) => {
@@ -14,11 +15,10 @@ export default function RecipesPage() {
     <div class="section properties" style="margin-bottom:48px; margin-top:48px;">
 
       <div class="container">
-        <search-bar></search-bar> <!--fix searchbar to work for recipes or create special one-->
+        <recipe-search-bar></recipe-search-bar> <!--fix searchbar to work for recipes or create special one-->
         <recipe-filter @filter-change=${onFilterChange}></recipe-filter>
         <app-recipes></app-recipes>
       </div>
-      
     </div>
     
   `;

@@ -12,12 +12,14 @@ class GroceryItem extends LitElement {
 
     static get properties() {
         return {
-            item: { type: Object }
+            item: { type: Object },
+            checked: { type: Boolean }
         };
     }
 
     constructor() {
         super();
+        this.checked = false;
     }
 
     static get styles() {
@@ -66,16 +68,34 @@ class GroceryItem extends LitElement {
             }
             button {
                 text-align: center;
-                background-color: #F3E5D9; 
-                color: #705B48; 
+                background-color: #F3E5D9;
+                color: #705B48;
                 font-weight: medium;
                 font-size: 16px;
                 width: 40px;
                 height: 40px;
                 border: none;
                 border-radius: 40px;
-                padding: 0px; 
+                padding: 0px;
                 align-items: center;
+            }
+            button.check-btn.checked {
+                background-color: #CB2127;
+                color: white;
+            }
+            h4.crossed {
+                text-decoration: line-through;
+                color: #aaa;
+            }
+            h4.recipe-used {
+                color: #CB2127;
+            }
+            .used-in-caption {
+                font-size: 10px;
+                font-style: italic;
+                color: #CB2127;
+                margin: 4px 0 0 0;
+                line-height: 1.4;
             }
         `;
     }
@@ -86,15 +106,9 @@ class GroceryItem extends LitElement {
     decrease() {
         this.dispatchEvent(new CustomEvent("decrease", { bubbles: true }));
     }
-    
 
-    openAddItem() {
-        this.dispatchEvent(new CustomEvent("add-to-fridge", {
-            detail: { item: this.item },
-            bubbles: true,
-            composed: true
-        }));
-        console.log("button clicked");
+    toggleCheck() {
+        this.dispatchEvent(new CustomEvent("toggle-check", { bubbles: true }));
     }
 
     render() { 
@@ -104,8 +118,11 @@ class GroceryItem extends LitElement {
     return html`
         <div class="card">
             <div>
-                <h4>${this.item.name}</h4>
+                <h4 class=${this.checked ? "crossed" : this.item.usedInRecipe ? "recipe-used" : ""}>${this.item.name}</h4>
                 <p>${this.item.type}</p>
+                ${this.item.usedInRecipe
+                    ? html`<p class="used-in-caption">Used in ${this.item.usedInRecipe}</p>`
+                    : null}
             </div>
 
             <div class="div-right">
@@ -118,7 +135,7 @@ class GroceryItem extends LitElement {
 
                 <button @click=${() => this.increase()}>+</button>
 
-                <button @click=${this.openAddItem}>✔</button>
+                <button class=${this.checked ? "check-btn checked" : "check-btn"} @click=${this.toggleCheck}>✔</button>
 
             </div>
         </div>

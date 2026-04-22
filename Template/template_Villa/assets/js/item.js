@@ -89,6 +89,13 @@ class PantryItem extends LitElement {
     decrease() {
         this.dispatchEvent(new CustomEvent("decrease", { bubbles: true }));
     }
+    edit() {
+        this.dispatchEvent(new CustomEvent("edit-item", {
+            detail: { item: this.item },
+            bubbles: true,
+            composed: true
+        }));
+    }
 
     isExpSoon(exp) {
         const expDate = new Date(`${exp.expMonth} ${exp.expDay}, ${exp.expYear}`);
@@ -149,6 +156,7 @@ class PantryItem extends LitElement {
                     </div>
 
                     <button @click=${() => this.increase()}>+</button>
+                    <button @click=${() => this.edit()}>✎</button>
                 </div>
             </div>
         `;
