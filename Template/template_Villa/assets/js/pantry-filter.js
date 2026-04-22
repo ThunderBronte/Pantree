@@ -36,21 +36,21 @@ class PantryFilter extends LitElement {
         div {
             display: flex;
             flex-wrap: wrap;
-            margin: 24px;
+            margin: 12px;
             gap: 12px;
         }
         button {
             background-color: #1E1E1E;
             color: white;
             border: none;
-            padding: 12px 48px;
+            padding: 12px 16px;
             border-radius: 40px;
             font-size: 12px;
             font-weight: medium;
             cursor: pointer;
         }
         button.is_active {
-            background-color: #CB2127;
+            background-color: #9CC97A;
         }  
         `
     }

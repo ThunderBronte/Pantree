@@ -18,12 +18,13 @@ export class GroceryList extends LitElement {
       border-radius: 8px;
       font-size: 13px;
       font-weight: bold;
-      white-space: nowrap;
+      white-space: wrap;
     }
     .left-group {
       display: flex;
       align-items: center;
       gap: 12px;
+      padding-right: 10px;
     }
     .top-bar {
       display: flex;
@@ -45,9 +46,9 @@ export class GroceryList extends LitElement {
         background-color: #CB2127;
         color: white;
         border: none;
-        padding: 12px 48px;
+        padding: 12px 24px;
         border-radius: 40px;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: medium;
         cursor: pointer;
       }

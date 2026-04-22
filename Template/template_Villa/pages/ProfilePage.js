@@ -8,14 +8,13 @@ const styles = `
     background-color: #CB2127;
     color: white;
     border: none;
-    padding: 12px 48px;
+    padding: 12px 24px;
     border-radius: 40px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: medium;
     cursor: pointer;
   }
     section {
-      margin: 48px;
       display: flex;
       flex-direction: column;
       padding: 48px;
@@ -27,6 +26,7 @@ const styles = `
         background-color: white;
         border-radius: 24px;
         padding: 24px;
+        width: 100%;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         justify-items: center;
         align-content: center;

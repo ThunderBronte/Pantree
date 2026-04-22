@@ -32,9 +32,9 @@ export class AddItemButton extends LitElement {
             background-color: #CB2127;
             color: white;
             border: none;
-            padding: 12px 48px;
+            padding: 12px 24px;
             border-radius: 40px;
-            font-size: 16px;
+            font-size: 12px;
             font-weight: medium;
             cursor: pointer;
         }
