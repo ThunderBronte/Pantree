@@ -69,16 +69,63 @@ class PantryItem extends LitElement {
             }
             button {
                 text-align: center;
-                background-color: #F3E5D9; 
-                color: #705B48; 
+                background-color: #F3E5D9;
+                color: #705B48;
                 font-weight: medium;
                 font-size: 16px;
                 width: 40px;
                 height: 40px;
                 border: none;
                 border-radius: 40px;
-                padding: 0px; 
+                padding: 0px;
                 align-items: center;
+            }
+            .name-row {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+            .icon-btn {
+                background-color: #F3E5D9;
+                color: #705B48;
+                border: none;
+                border-radius: 40px;
+                width: 26px;
+                height: 26px;
+                font-size: 12px;
+                cursor: pointer;
+                padding: 0;
+                flex-shrink: 0;
+                line-height: 1;
+            }
+            .icon-btn.is-fav {
+                background-color: #CB2127;
+                color: white;
+            }
+            .tooltip-wrap {
+                position: relative;
+                display: inline-flex;
+            }
+            .tooltip-wrap .tooltip {
+                visibility: hidden;
+                opacity: 0;
+                background-color: #1E1E1E;
+                color: white;
+                font-size: 10px;
+                border-radius: 4px;
+                padding: 4px 8px;
+                position: absolute;
+                bottom: calc(100% + 6px);
+                left: 50%;
+                transform: translateX(-50%);
+                white-space: nowrap;
+                transition: opacity 0.15s;
+                pointer-events: none;
+                z-index: 10;
+            }
+            .tooltip-wrap:hover .tooltip {
+                visibility: visible;
+                opacity: 1;
             }
         `;
     }
@@ -95,6 +142,12 @@ class PantryItem extends LitElement {
             bubbles: true,
             composed: true
         }));
+    }
+    toggleFav() {
+        this.dispatchEvent(new CustomEvent("toggle-fav", { bubbles: true }));
+    }
+    rewind() {
+        this.dispatchEvent(new CustomEvent("rewind-item", { bubbles: true }));
     }
 
     isExpSoon(exp) {
@@ -129,9 +182,16 @@ class PantryItem extends LitElement {
         return html`
             <div class="card ${expiringSoon ? 'expiring': ''} ${expired ? 'expired': ''}">
                 <div>
-                    <h4>${this.item.name}</h4>
+                    <div class="name-row">
+                        <h4>${this.item.name}</h4>
+                        <button class=${this.item.isFav ? "icon-btn is-fav" : "icon-btn"} @click=${() => this.toggleFav()}>♥</button>
+                        ${this.item.isFav ? html`
+                            <span class="tooltip-wrap">
+                                <button class="icon-btn" @click=${() => this.rewind()}>↺</button>
+                                <span class="tooltip">Reset expiration to shelf life</span>
+                            </span>` : null}
+                    </div>
 
-                    
                 ${(expiringSoon || expired) ? html`
                     <span class="expiring-badge">
                         ${expired ? 'EXPIRED' : 'EXPIRING SOON'}

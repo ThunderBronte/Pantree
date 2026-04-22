@@ -222,6 +222,34 @@ export class AppPantry extends LitElement {
     this.savedItems();
   }
 
+  toggleFav(id) {
+    this.items = this.items.map(item =>
+      item.id === id ? { ...item, isFav: !item.isFav } : item
+    );
+    this.savedItems();
+  }
+
+  rewindItem(id) {
+    const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    this.items = this.items.map(item => {
+      if (item.id !== id) return item;
+      const expOnOpen = item.count[0]?.expOnOpen || 7;
+      const newExp = new Date();
+      newExp.setDate(newExp.getDate() + expOnOpen);
+      return {
+        ...item,
+        count: item.count.map((c, i) => i === 0 ? {
+          ...c,
+          expDate: newExp.toISOString().split("T")[0],
+          expMonth: monthNames[newExp.getMonth()],
+          expDay: newExp.getDate(),
+          expYear: newExp.getFullYear()
+        } : c)
+      };
+    });
+    this.savedItems();
+  }
+
   isExpired(item) {
     const exp = item.count?.[0];
     if (!exp) return false;
@@ -255,6 +283,8 @@ export class AppPantry extends LitElement {
             @increase=${() => this.increaseItem(item.id)}
             @decrease=${() => this.decreaseItem(item.id)}
             @edit-item=${e => { this._editItem = e.detail.item; }}
+            @toggle-fav=${() => this.toggleFav(item.id)}
+            @rewind-item=${() => this.rewindItem(item.id)}
           ></pantry-item>
         `
     )
