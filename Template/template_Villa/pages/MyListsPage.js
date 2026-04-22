@@ -19,15 +19,6 @@ export default function MyListsPage({ currentPath }) {
     <div class="section properties" style="margin-bottom:48px; margin-top:48px;">
       <div class="container">
         <!-- Grocery List -->
-        <div style="margin-bottom: 12px;">
-            <h2 style="color:#CB2127; font-style: italic; text-align: center;">Grocery List</h2>
-        </div>
-
-        <!--Search / filter
-        <pantry-filter
-          @filter-change=${onFilterChange}
-        ></pantry-filter>
-         -->
 
         <!--Groups-->
         <grocery-list .filterType=${selectedFilter}></grocery-list>

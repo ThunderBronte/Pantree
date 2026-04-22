@@ -27,6 +27,7 @@ export class GroceryList extends LitElement {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 24px;
     }
     .send-btn {
       background-color: #F3E5D9;
@@ -208,26 +209,23 @@ export class GroceryList extends LitElement {
     
             <!--Pantry-->
             <div style="margin-bottom: 12px;">
-                <h2 style="color:#CB2127;">Pantry</h2>
                 ${this.renderItems(this.itemsBySection("pantry"))}
             </div>
 
             <!--Fridge -->
             <div style="margin-bottom: 12px;">
-                <h2 style="color:#CB2127;">Fridge</h2>
                 ${this.renderItems(this.itemsBySection("fridge"))}
             </div>
 
             <!-- Freezer -->
             <div style="margin-bottom: 12px;">
-                <h2 style="color:#CB2127;">Freezer</h2>
                 ${this.renderItems(this.itemsBySection("freezer"))}
             </div>
 
             <!-- Recipe sections -->
             ${this.recipeTitles.map(title => html`
-                <div style="margin-bottom: 12px;">
-                    <h2 style="color:#CB2127;">${title}</h2>
+                <div style="margin-bottom: 12px; background: transparent; border: 2px solid #CB2127; border-radius: 8px; padding: 12px;">
+                    <h2 style="color:#CB2127; margin-top: 0;">${title}</h2>
                     ${this.renderItems(this.recipeSection(title))}
                 </div>
             `)}

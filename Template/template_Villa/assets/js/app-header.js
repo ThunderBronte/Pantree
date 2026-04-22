@@ -82,9 +82,6 @@ class AppHeader extends LitElement {
                 <h1 style="color: #CB2127">Pantree</h1>
             </a>
 
-            <a class="menu-trigger">
-                <span>Menu</span>
-            </a>
         </div>
     `;
 }
