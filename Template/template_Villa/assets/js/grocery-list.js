@@ -9,6 +9,20 @@ export class GroceryList extends LitElement {
   };
 
   static styles = css`
+    .cost-banner {
+      background-color: #9CC97A;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .left-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -124,6 +138,12 @@ export class GroceryList extends LitElement {
     );
     }
 
+  get estimatedCost() {
+    return this.items
+      .reduce((sum, item) => sum + (item.singleCost ?? 0) * (item.count?.length || 1), 0)
+      .toFixed(2);
+  }
+
   toggleCheck(id) {
     if (this.checkedIds.includes(id)) {
       this.checkedIds = this.checkedIds.filter(cid => cid !== id);
@@ -170,7 +190,10 @@ export class GroceryList extends LitElement {
     
     return html`
         <div class="top-bar">
-          <add-item-button @add-item=${e => this.addItem(e.detail)}></add-item-button>
+          <div class="left-group">
+            <div class="cost-banner">Estimated Cost: $${this.estimatedCost}</div>
+            <add-item-button @add-item=${e => this.addItem(e.detail)}></add-item-button>
+          </div>
           ${this.checkedIds.length > 0
             ? html`<button class="send-btn" @click=${() => this.finishShopping()}>Send ${this.checkedIds.length} item${this.checkedIds.length === 1 ? "" : "s"} to Pantry</button>`
             : null}
