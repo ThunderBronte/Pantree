@@ -1,0 +1,29 @@
+{
+    "stores": [
+        {
+            "id": "1",
+            "name": "Walmart",
+            "isFav": false,
+            "location": "2.9 miles",
+            "added": ""
+        },
+
+        {
+            "id": "2",
+            "name": "Trader Joes",
+            "isFav": false,
+            "location": "6.3 miles",
+            "added": ""
+            
+        },
+
+        {
+            "id": "3",
+            "name": "Wegmans",
+            "isFav": false,
+            "location": "9.6 miles",
+            "added": ""
+        }
+    ]
+    
+}

@@ -1,11 +1,13 @@
 import { LitElement, html, css } from "lit";
 import "./grocery-item.js";
+import "./store-list.js";
 
 export class GroceryList extends LitElement {
   static properties = {
     items: { type: Array },
     filterType: { type: String },
-    checkedIds: { type: Array }
+    checkedIds: { type: Array },
+    view: { type: String } // NEW
   };
 
   static styles = css`
@@ -39,6 +41,17 @@ export class GroceryList extends LitElement {
       font-style: italic;
       cursor: pointer;
     }
+    .store-button {
+        background-color: #CB2127;
+        color: white;
+        border: none;
+        padding: 12px 48px;
+        border-radius: 40px;
+        font-size: 16px;
+        font-weight: medium;
+        cursor: pointer;
+      }
+
   `;
 
   constructor() {
@@ -46,12 +59,17 @@ export class GroceryList extends LitElement {
     this.items = [];
     this.filterType = 'all';
     this.checkedIds = [];
+    this.view = "grocery"; // default
   }
 
   addItem(itemDetail) {
     const newItem = itemDetail.newItem || itemDetail;
     this.items = [...this.items, newItem];
     this.savedItems();
+  }
+
+  goToStores() {
+    this.view = "stores";
   }
 
   async connectedCallback() {
@@ -188,6 +206,15 @@ export class GroceryList extends LitElement {
 
   render() {
 
+    if (this.view === "stores") {
+      return html`
+        <button class="store-button" @click=${() => (this.view = "grocery")}>
+          ← Back
+        </button>
+        <store-list></store-list>
+      `;
+    }
+
     
     return html`
         <div class="top-bar">
@@ -198,6 +225,10 @@ export class GroceryList extends LitElement {
           ${this.checkedIds.length > 0
             ? html`<button class="send-btn" @click=${() => this.finishShopping()}>Send ${this.checkedIds.length} item${this.checkedIds.length === 1 ? "" : "s"} to Pantry</button>`
             : null}
+            <button class="store-button" @click=${this.goToStores}>
+            View Stores
+          </button>
+
         </div>
         <div class="row properties-box">
             <!--
