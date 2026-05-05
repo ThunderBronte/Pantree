@@ -7,6 +7,7 @@
             "author": "Mark Bittman",
             "thumbnail": "https://static01.nyt.com/images/2024/11/25/multimedia/Cacio-e-Peperex-bcjl/Cacio-e-Peperex-bcjl-jumbo.jpg?quality=75&auto=webp",
             "url": "https://cooking.nytimes.com/recipes/1017304-cacio-e-pepe",
+            "mealTypes": ["lunch", "dinner"],
             "tags": [
                 "peanut-free",
                 "treenut-free",
@@ -58,6 +59,7 @@
             "author": "Kristine Chayes",
             "thumbnail": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Fettuccine-Carbonara_EXPS_FT24_175448_ST_0405_2.jpg?fit=750%2C750",
             "url": "https://www.tasteofhome.com/recipes/fettuccine-carbonara/",
+            "mealTypes": ["lunch", "dinner"],
             "printContent": {
                 "ingredients": [
                     "1/2 pound bacon strips, chopped",
@@ -117,6 +119,923 @@
                     "num": 1
                 }
             ]
+        },
+
+        {
+            "id": "3",
+            "title": "Lemon Bars",
+            "blog": "Preppy Kitchen",
+            "author": "John Kanell",
+            "thumbnail": "https://preppykitchen.com/wp-content/uploads/2020/02/Lemon-Bars-feature-new.jpg",
+            "url": "https://preppykitchen.com/lemon-bars/",
+            "mealTypes": ["dessert"],
+            "printContent": {
+                "equipment" : [
+                    "9x13 inch baking pan",
+                    "Food Procesor"
+                ],
+                "ingredients": [
+                    "3 cups all-purpose flour 360g, divided 2 1/2 cups for crust and 1/2 cup for filling",
+                    "2/3 cups powdered sugar 66g, for the shortbread, plus more for dusting",
+                    "1/2 tsp salt",
+                    "12 tbsp unsalted butter melted, 170g",
+                    "3 tbsp lemon zest zest of three lemons",
+                    "3 cups sugar 600g",
+                    "8 eggs large, room temperature",
+                    "1 cup lemon juice fresh, 240mL"
+                ],
+                "steps": [
+                    "Heat oven to 350F and line a 9x13 baking dish with parchment paper.",
+                    "Whisk together 2 1/2 cups of flour (300g) with the powdered sugar and salt, then pour in the melted butter and mix until combined. You can also do this using a stand mixer with a paddle attachment. If you'd like a dash of vanilla can be added in with the butter at this step.",
+                    "Sprinkle the dough into your lined pan and press down into a flat layer. Bake at 350F for about 20 minutes or until a light golden color.",
+                    "While the crust is baking add the sugar to a food processor and add the zest of three lemons. Pulse until the zest is fully incorporated and sugar is a light yellow color. If you don't have a processor just mince the zest and mix with the sugar in a bag or bowl.",
+                    "Add the sugar and remaining half cup of flour to a large bowl and mix well. You can sift together however and zesty sugar bits will need to get dumped out of the sifter as they might clog things up and not go through.",
+                    "Pour in the lemon juice and add the eggs then mix very well until completely combined.",
+                    "Pour the filling onto the warm crust then transfer to oven and bake for about 25 minutes, turning halfway through the bake. Remove from oven and allow to cool for an hour before chilling in the refrigerator for two hours.",
+                    "Dust with powdered sugar and cut into bars using a clean, sharp, damp knife. Clean and re-wet the knife after each cut."
+                ]
+            },
+            "tags": [
+                "peanut-free",
+                "treenut-free",
+                "vegetarian",
+                "halal"
+            ],
+            "rating": 4.97,
+            "servings": 15,
+            "totalTime": "4 hr 15 min",
+
+            "ingredients": [
+                {
+                    "name": "All-Purpose Flour",
+                    "num": 1
+                },
+                {
+                    "name": "Salt",
+                    "num": 1
+                },
+                {
+                    "name": "Unsalted Butter",
+                    "num": 1.5
+                },
+                {
+                    "name": "Lemon",
+                    "num": 3
+                },
+                {
+                    "name": "Sugar",
+                    "num": 1
+                },
+                {
+                    "name": "Egg",
+                    "num": 8
+                }
+             ]
+        },
+        {
+            "id": "4",
+            "title": "Classic Chocolate Chip Cookies",
+            "blog": "Ghirardelli",
+            "author": "Ghirardelli Chocolate Company",
+            "thumbnail": "https://www.ghirardelli.com/media/recipe/ChocolateChipCookies_27987.jpg",
+            "url": "https://www.ghirardelli.com/recipes/classic-chocolate-chip-cookies-rec1016",
+            "mealTypes": ["dessert", "snack"],
+            "printContent": {
+                "ingredients": [
+                    "1 cup Butter or margarine, softened",
+                    "3/4 cup Sugar",
+                    "3/4 cup Brown sugar, packed",
+                    "2 Eggs, large",
+                    "2 teaspoons Vanilla extract",
+                    "2 1/4 cups Flour, unsifted",
+                    "1 teaspoon Baking soda",
+                    "1/2 teaspoon Salt",
+                    "1 cup Walnuts or pecans, chopped (optional)",
+                    "2 cups Ghirardelli Bittersweet 60% Cacao Baking Chips"
+                ],
+                "steps": [
+                    "Heat oven to 375ºF.",
+                    "Stir flour with baking soda and salt; set aside.",
+                    "In large mixing bowl, beat butter with sugar, and brown sugar at medium speed until creamy and lightened in color.",
+                    "Add eggs and vanilla, one at a time. Mix on low speed until incorporated.",
+                    "Gradually blend dry mixture into creamed mixture. Stir in nuts and chocolate chips.",
+                    "Drop by tablespoon onto ungreased cookie sheets.",
+                    "Bake for 9 to 11 minutes or until chocolate chip cookies are golden brown."
+                ]
+            },
+            "tags": [
+                "peanut-free",
+                "treenut-free",
+                "vegetarian",
+                "halal"
+            ],
+            "rating": 5,
+            "servings": 48,
+            "totalTime": "20 min",
+
+            "ingredients": [
+                {
+                    "name": "All-Purpose Flour",
+                    "num": 1
+                },
+                {
+                    "name": "Sugar",
+                    "num": 1
+                },
+                {
+                    "name": "Brown Sugar",
+                    "num": 1
+                },
+                {
+                    "name": "Baking Soda",
+                    "num": 1
+                },
+                {
+                    "name": "Egg",
+                    "num": 2
+                },
+                {
+                    "name": "Vanilla Extract",
+                    "num": 1
+                },
+                {
+                    "name": "Unsalted Butter",
+                    "num": 2
+                },
+                {
+                    "name": "Salt",
+                    "num": 1
+                },
+                {
+                    "name": "Walnuts or Pecans",
+                    "num": 1
+                },
+                {
+                    "name": "Ghirardelli Bittersweet 60% Cacao Baking Chips",
+                    "num": 1
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "title": "Honey Siriracha Salmon Bowls",
+            "blog": "Eat with Clarity",
+            "author": "Claire Cary",
+            "thumbnail": "https://eatwithclarity.com/wp-content/uploads/2022/11/honey-sriracha-salmon-bowls.jpg",
+            "url": "https://eatwithclarity.com/honey-sriracha-salmon-bowls/",
+            "mealTypes": ["lunch", "dinner"],
+            "printContent": {
+                "ingredients": [
+                    "4 4-6 ounce salmon filets",
+                    "3 tablespoons low sodium soy sauce or tamari",
+                    "2 tablespoons honey",
+                    "2 tablespoons sriracha",
+                    "2 teaspoons minced garlic",
+                    "3 tablespoons water",
+                    "2 cups cooked rice",
+                    "1 avocado",
+                    "1 cucumber sliced",
+                    "1/4 cup sliced green onions",
+                    "1 cup edamame cooked",
+                    "½ cup sriracha mayo (optional)"
+                ],
+                "steps": [
+                    "Cut your salmon into 1 inch cubes. I took the skin off, but you can keep it on if you prefer.",
+                    "Whisk together all ingredients for the marinade in a large bowl.",
+                    "Add in the salmon and marinate for up to 1 hour, but ideally at least 20 minutes.",
+                    "Once it’s done marinating, heat a large skillet with a splash of oil and add in the salmon, but keep the rest of the marinade on the side for now.",
+                    "Cook for 2-3 minutes on each side to get a nice crisp.",
+                    "Add in the marinade and cook until the sauce thickens.",
+                    "Assemble your bowls with a bed of rice, then add in the salmon, avocado, cucumber, edamame and top with the sriracha mayo.",
+                    "Sprinkle with red pepper flakes and sesame seeds and enjoy!"
+                ]
+            },
+            "tags": [
+                "peanut-free",
+                "pescatarian",
+                "halal"
+            ],
+            "rating": 4.98,
+            "servings": 4,
+            "totalTime": "20 min",
+
+            "ingredients": [
+                {
+                    "name": "Salmon",
+                    "num": 4
+                },
+                {
+                    "name": "Soy Sauce",
+                    "num": 1
+                },
+                {
+                    "name": "Honey",
+                    "num": 1
+                },
+                {
+                    "name": "Sriracha",
+                    "num": 1
+                },
+                {
+                    "name": "Garlic",
+                    "num": 1
+                },
+                {
+                    "name": "Jasmine Rice",
+                    "num": 1
+                },
+                {
+                    "name": "Edamame",
+                    "num": 1
+                },
+                {
+                    "name": "Avocado",
+                    "num": 1
+                },
+                {
+                    "name": "Cucumber",
+                    "num": 1
+                },
+                {
+                    "name": "Sriracha Mayo",
+                    "num": 1
+                }
+             ]
+        },
+        {
+            "id": "6",
+            "title": "Crispy Gochujang Korean Tofu",
+            "blog": "Eat with Clarity",
+            "author": "Claire Cary",
+            "thumbnail": "https://eatwithclarity.com/wp-content/uploads/2021/09/korean-gochujang-tofu-5-1.webp",
+            "url": "https://eatwithclarity.com/gochujang-korean-tofu/",
+            "mealTypes": ["lunch", "dinner"],
+            "tags": [
+                "vegetarian",
+                "halal"
+            ],
+            "rating": 4.96,
+            "servings": 4,
+            "totalTime": "45 min",
+            "printContent": {
+                "ingredients": [
+                    "1 block extra firm tofu",
+                    "1 tablespoon soy sauce or tamari, for marinade",
+                    "1 tablespoon cornstarch, for coating",
+                    "3 tablespoons breadcrumbs, for coating",
+                    "1/4 cup soy sauce or tamari, for sauce",
+                    "1/4 tablespoons gochujang, for sauce",
+                    "1 tablespoon tomato paste",
+                    "3 tablespoons honey sub maple syrup for vegan, for sauce",
+                    "1 tablespoon sesame oil, for sauce",
+                    "1 tablespoon rice vinegar, for sauce",
+                    "2 teaspoon minced garlic, for sauce",
+                    "1 teaspoon grated ginger, for sauce",
+                    "1 teaspoon cornstarch, for sauce",
+                    "1 teaspoon water, for sauce"
+                ],
+                "steps": [
+                    "Preheat the oven to 400 degrees Fahrenheit.",
+                    "Remove the tofu from the package and drain off the excess liquid. Wrap in a towel and lightly press to absorb the liquid.",
+                    "Cut into about 1 inch cubes and add to a bowl.",
+                    "Toss with the soy sauce, then cornstarch, then breadcrumbs until well coated.",
+                    "Place on a baking sheet lined with parchment paper and try to ensure no pieces of tofu touch each other. This helps it get crispier.",
+                    "Bake for 25 minutes, then turn off the oven and let sit an additional 5 minutes.",
+                    "Meanwhile, whisk together all ingredients aside from the water/cornstarch for the sauce in a small pot.",
+                    "Whisk together the cornstarch and water in a small bowl and add to the pot. Whisk, then heat over low/medium heat until the sauce starts to bubble and thicken. Remove from the heat to let it thicken further.",
+                    "When the tofu is done, let cool for 5 minutes, then transfer to a bowl. Toss with half of the sauce (reserve the rest for serving) until well coated.",
+                    "I served mine with rice, cucumber, carrot, avocado and sesame seeds. Also delicious with broccoli or just as is!"
+                ]
+             },
+
+            "ingredients": [
+                {
+                    "name": "Extra Firm Tofu",
+                    "num": 1
+                },
+                {
+                    "name": "Garlic",
+                    "num": 1
+                },
+                {
+                    "name": "Gojujang",
+                    "num": 1
+                },
+                {
+                    "name": "Cornstarch",
+                    "num": 1
+                },
+                {
+                    "name": "Sesame Oil",
+                    "num": 1
+                },
+                {
+                    "name": "Rice Vinegar",
+                    "num": 1
+                },
+                {
+                    "name": "Honey",
+                    "num": 1
+                },
+                {
+                    "name": "Tomato Paste",
+                    "num": 1
+                },
+                {
+                    "name": "Soy Sauce",
+                    "num": 1
+                },
+                {
+                    "name": "Ginger",
+                    "num": 1
+                },
+                {
+                    "name": "Breadcrumbs",
+                    "num": 1
+                }
+             ]
+        },
+        {
+            "id": "7",
+            "title": "Protein Waffles",
+            "blog": "The Big Man's World",
+            "author": "Arman Liew",
+            "thumbnail": "https://thebigmansworld.com/wp-content/uploads/2025/04/protein-waffles2.jpg",
+            "url": "https://thebigmansworld.com/protein-waffles/",
+            "mealTypes": ["breakfast"],
+            "printContent": {
+                "ingredients": [
+                    "1/2 cup rolled oats 45g",
+                    "1/2 cup cottage cheese 120g",
+                    "2 large eggs",
+                    "1/2 cup protein powder 54g, vanilla flavored"
+                ],
+                "steps": [
+                    "Add the eggs, oats, cottage cheese, and protein powder into a high speed blender. Blend very well until smooth and no clumps remain.",
+                    "Heat a waffle iron as per the box directions. Once hot, pour spoonfuls of the batter to cover the iron. Cook the waffle until crispy on the edges. Remove from the waffle iron and cook the remaining batter.",
+                    "Serve the waffles immediately with your favorite sweet or savory toppings."
+                ]
+            },
+            "tags": [
+                "peanut-free",
+                "treenut-free",
+                "vegetarian",
+                "halal"
+            ],
+            "rating": 4.98,
+            "servings": 2,
+            "totalTime": "10 min",
+            "ingredients": [
+                {
+                    "name": "Egg",
+                    "num": 2
+                }, 
+                {
+                    "name": "Rolled Oats",
+                    "num": 1
+                }, 
+                {
+                    "name": "Protein Powder",
+                    "num": 1
+                },
+                {
+                    "name": "Cottage Cheese",
+                    "num": 1
+                }
+             ]
+        },
+        {
+            "id": "8",
+            "title": "Classic Chocolate Brownies",
+            "blog": "Ghirardelli",
+            "author": "Ghirardelli Chocolate Company",
+            "thumbnail": "https://www.ghirardelli.com/media/recipe/remote/wcsstore/GhirardelliCatalogAssetStore//Attachment/Recipes/2019/FudgyBrownies_Recipe_2019Updatr.jpg",
+            "url": "https://www.ghirardelli.com/recipes/classic-chocolate-brownies-rec1048",
+            "mealTypes": ["dessert", "snack"],
+            "printContent": {
+                "ingredients": [
+                    "4 ounces Ghirardelli Semi-Sweet Chocolate Baking Bar",
+                    "1/2 cup (1 stick) Butter, unsalted, cut into pieces",
+                    "1 cup Brown sugar, dark or light, packed",
+                    "1 teaspoon Vanilla extract",
+                    "2 Eggs, large",
+                    "3/4 cup + 2 tablespoons All-purpose flour",
+                    "1/4 teaspoon Baking powder",
+                    "3/8 teaspoon Salt",
+                    "1/2 cup Ghirardelli 60% Cacao Bittersweet Baking Chips"
+                ],
+                "steps": [
+                    "Preheat the oven to 350°F.",
+                    "Butter and flour an 8-inch square baking pan.",
+                    "Chop the 4 ounces of semi sweet chocolate bars into 1-inch pieces.",
+                    "In the top of a double boiler or in a heatproof bowl over barely simmering water, melt the 4 chopped chocolate and butter, stirring occasionally until smooth.",
+                    "Remove the pan from the heat and let cool to room temperature.",
+                    "Stir the brown sugar and vanilla into the chocolate mixture.",
+                    "Add the eggs and mix well. In a bowl, sift together flour, baking powder, and salt.",
+                    "Slowly fold the flour mixture into the chocolate mixture, mixing well until blended.",
+                    "Stir in the chocolate chips and pour the batter into the prepared pan.",
+                    "Bake for 25 to 30 minutes, until a tester comes out clean.",
+                    "Remove from the oven and cool chocolate brownies for at least 10 minutes before cutting into 2-inch squares."
+                ]
+            },
+            "tags": [
+                "halal",
+                "vegetarian",
+                "peanut-free",
+                "treenut-free",
+                "pescatarian"
+            ],
+            "rating": 5,
+            "servings": 18,
+            "totalTime": "45 min",
+            "ingredients": [
+                {
+                    "name": "Ghirardelli 60% Cacao Bittersweet Baking Chips",
+                    "num": 1
+                },
+                {
+                    "name": "Ghirardelli Semi-Sweet Chocolate Baking Bar",
+                    "num": 1
+                },
+                {
+                    "name": "Unsalted Butter",
+                    "num": 1
+                },
+                {
+                    "name": "Brown Sugar",
+                    "num": 1
+                },
+                {
+                    "name": "Vanilla Extract",
+                    "num": 1
+                },
+                {
+                    "name": "Egg",
+                    "num": 2
+                },
+                {
+                    "name": "All-Purpose Flour",
+                    "num": 1
+                },
+                {
+                    "name": "Baking Powder",
+                    "num": 1
+                },
+                {
+                    "name": "Salt",
+                    "num": 1
+                }
+             ]
+        },
+                        {
+            "id": "9",
+            "title": "Birria Tacos Recipe",
+            "blog": "I am a Food Blog",
+            "author": "Mike",
+            "thumbnail": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2025/05/homemade-birria-tacos-recipe-3291w-2048x1366.webp",
+            "url": "https://iamafoodblog.com/birria-tacos-recipe/",
+            "mealTypes": ["dinner", "lunch"],
+            "printContent": {
+                "equipment": [
+                    "Instant Pot or Slow Cooker"
+                ],
+                "ingredients": [
+                    "1.5 lb beef shank",
+                    "1 lb sirloin or other roast/steak",
+                    "3 dried guajillo peppers, for marinade", 
+                    "1 can chipotle peppers in adobo, for marinade",
+                    "1/4 cup vinegar, for marinade",
+                    "1 tablespoon cumin, for marinade",
+                    "1 tablespoon oregano, for marinade",
+                    "1 tablespoon smoked paprika, for marinade",
+                    "1/2 cup crushed tomatoes, for marinade",
+                    "5 garlic cloves, for marinade",
+                    "Salt & pepper, for marinade",
+                    "2 bay leaves, for stew",
+                    "6 cloves, for stew",
+                    "1 cinnamon stick, for stew",
+                    "1 onion, for stew",
+                    "1 quart chicken stock, for stew",
+                    "1 onion, for serving",
+                    "Corn tortillas, for serving",
+                    "Cheese, for serving",
+                    "Cilantro, for serving"
+                ],
+                "steps": [
+                    "Bring a large pot of water to a boil and then remove from heat. Soak your dried guajillo peppers for 15 minutes. Meanwhile, cube your cab sirloin, then season both the steak and the shank with salt and pepper. Set aside.",
+                    "Add marinade ingredients to the blender. When the peppers are done soaking, hold them by the tip over the sink and use scissors to cut the stem off and allow the seeds to fall out, then add to blender. Blend the marinade into a smooth paste. Marinate the meats for a minimum of two hours or up to overnight.",
+                    "Set your Instant Pot on saute high or use a skillet over medium heat. Add 1-2 tbsp oil, then saute the onions until golden and translucent (6-8 minutes).",
+                    "Add the meats, marinade, bay leaves, cinnamon stick, and cloves to the pot. Cover with chicken broth, then set to high pressure for 45 minutes. If using a slow cooker or stovetop, set to low heat for 4-6 hours.",
+                    "When the instant pot is finished, allow a natural release, then remove the meat. Shred, set aside, and discard the bones.",
+                    "Warm up some tortillas, then dip the tortillas in the stew. Build your tacos, top with any optional toppings, then fry over medium heat on a nonstick skillet. Enjoy immediately, preferably with a margarita or cold Mexican beer."
+                ]
+            },
+            "tags": [
+                "peanut-free",
+                "treenut-free"
+            ],
+            "rating": 4.71,
+            "servings": 4,
+            "totalTime": "2 hrs",
+            "ingredients": [
+                {
+                    "name": "Beef Shank",
+                    "num": 1.5
+                },
+                {
+                    "name": "Sirloin",
+                    "num": 1
+                },
+                {
+                    "name": "Crushed Tomatoes",
+                    "num": 1
+                },
+                {
+                    "name": "Dried Guajillo Peppers",
+                    "num": 3
+                },
+                {
+                    "name": "Chipotle Peppers in Adobo",
+                    "num": 1
+                }, 
+                {
+                    "name": "Cumin",
+                    "num": 1
+                },
+                {
+                    "name": "Oregano",
+                    "num": 1
+                }, 
+                {
+                    "name": "Smoked Paprika",
+                    "num": 1
+                },
+                {
+                    "name": "Garlic Clove",
+                    "num": 5
+                }, 
+                {
+                    "name": "Vinegar",
+                    "num": 1
+                },
+                {
+                    "name": "Bay Leaf",
+                    "num": 2
+                }, 
+                {
+                    "name": "Salt & Pepper",
+                    "num": 1
+                },
+                {
+                    "name": "Cloves",
+                    "num": 6
+                }, 
+                {
+                    "name": "Cinnamon Stick",
+                    "num": 1
+                },
+                {
+                    "name": "Onion",
+                    "num": 2
+                }, 
+                {
+                    "name": "Corn Tortillas",
+                    "num": 12
+                }, 
+                {
+                    "name": "Chicken Stock",
+                    "num": 1
+                }, 
+                {
+                    "name": "Cheese",
+                    "num": 1
+                }, 
+                {
+                    "name": "Cilantro",
+                    "num": 1
+                }
+             ]
+        },
+        {
+            "id": "10",
+            "title": "Spinach Stuffed Chicken",
+            "blog": "That Low Carb Life",
+            "author": "Karly Campbell",
+            "thumbnail": "https://thatlowcarblife.com/wp-content/uploads/2018/03/stuffed-chicken-breasts.jpg",
+            "url": "https://thatlowcarblife.com/spinach-stuffed-chicken-2/",
+            "mealTypes": ["dinner", "lunch"],
+            "printContent": {
+                "ingredients": [
+                    "4 chicken breasts",
+                    "1 tablespoon olive oil or avocado oil",
+                    "1 tesapoon paprika",
+                    "1 teaspoon salt divided",
+                    "¼ teaspoon garlic powder",
+                    "¼ teaspoon onion powder",
+                    "4 ounces cream cheese softened",
+                    "¼ cup grated Parmesan",
+                    "2 tablespoons mayonnaise",
+                    "1 ½ cups chopped fresh spinach",
+                    "1 teaspoon garlic minced",
+                    "½ teaspoon red pepper flakes"
+                ],
+                "steps": [
+                    "Preheat oven to 375 degrees.",
+                    "Place the chicken breasts on a cutting board and drizzle with oil.",
+                    "Add the paprika, 1/2 teaspoon salt, garlic powder, and onion powder to a small bowl and stir to combine. Sprinkle evenly over both sides of the chicken.",
+                    "Use a sharp knife to cut a pocket into the side of each chicken breast. Set chicken aside.",
+                    "Add cream cheese, Parmesan, mayonnaise, spinach, garlic, red pepper and remaining ½ teaspoon of salt to a small mixing bowl and stir well to combine.",
+                    "Spoon the spinach mixture into each chicken breast evenly.",
+                    "Place the chicken breasts in a 9×13 baking dish. Bake, uncovered, for 25-30 minutes or until chicken is cooked through."
+                ]
+            },
+            "tags": [
+                "halal",
+                "peanut-free",
+                "treenut-free",
+                "gluten-free"
+            ],
+            "rating": 4.44,
+            "servings": 4,
+            "totalTime": "35 min",
+            "ingredients": [
+                {
+                    "name": "Chicken Breast",
+                    "num": 4
+                },
+                {
+                    "name": "Spinach",
+                    "num": 1
+                },
+                {
+                    "name": "Parmesan",
+                    "num": 1
+                },
+                {
+                    "name": "Cream Cheese",
+                    "num": 1
+                },
+                {
+                    "name": "Mayonnaise",
+                    "num": 1
+                },
+                {
+                    "name": "Garlic",
+                    "num": 1
+                },
+                {
+                    "name": "Red Pepper Flakes",
+                    "num": 1
+                },
+                {
+                    "name": "Paprika",
+                    "num": 1
+                },
+                {
+                    "name": "Salt",
+                    "num": 1
+                },
+                {
+                    "name": "Garlic Powder",
+                    "num": 1
+                },
+                {
+                    "name": "Onion Powder",
+                    "num": 1
+                }
+             ]
+        },
+        {
+            "id": "11",
+            "title": "Vietnamese Pho recipe",
+            "blog": "recipetineats",
+            "author": "Nagi Maehashi",
+            "thumbnail": "https://www.recipetineats.com/tachyon/2019/04/Beef-Pho_6.jpg?resize=900%2C1260&zoom=0.72",
+            "url": "https://www.recipetineats.com/vietnamese-pho-recipe/",
+            "mealTypes": ["dinner", "lunch"],
+            "printContent": {
+                "ingredients": [
+                    "2 large onions, halved",
+                    "150g / 5oz ginger , sliced down the centre",
+                    "10 star anise",
+                    "4 cinnamon quills",
+                    "4 cardamon pods",
+                    "3 cloves (the spice cloves!)",
+                    "1.5 tbsp coriander seeds",
+                    "1.5kg / 3lb beef brisket",
+                    "1kg / 2lb meaty beef bones",
+                    "1kg / 2lb marrow bones (leg, knuckle), cut to reveal marrow",
+                    "3.5 litres / 3.75 quarts water (15 cups)",
+                    "2 tbsp white sugar",
+                    "1 tbsp salt",
+                    "40 ml / 3 tbsp fish sauce",
+                    "50g / 1.5 oz dried rice sticks (or 120g/4oz fresh) ",
+                    "30g / 1 oz beef tenderloin, raw, very thinly sliced",
+                    "3 – 5 brisket slices (used for broth)",
+                    "Beansprouts, handful",
+                    "Thai basil, 3 – 5 sprigs",
+                    "Coriander/cilantro, 3 – 5 sprigs (or more basil)",
+                    "Lime wedges",
+                    "Finely sliced red chilli",
+                    "Hoisin sauce",
+                    "Sriracha"
+                ],
+                "steps": [
+                    "Heat a heavy based skillet over high heat (no oil) until smoking.",
+                    "Place onion and ginger in pan cut side down. Cook for a few minutes until it’s charred, then turn. Remove and set aside.",
+                    "Toast Spices lightly in a dry skillet over medium high heat for 3 minutes. ",
+                    "Rinse bones & brisket then cover with water in large stock pot.",
+                    "Boil for 5 minutes, then drain.",
+                    "Rinse each bone and brisket under tap water.",
+                    "Wipe pot clean, bring 3.5 litres / 3.75 quarts water to boil.",
+                    "Add bones and brisket, onion, ginger, Spices",
+                    "Add onion, ginger, Spices, sugar and salt – water should just barely cover everything.",
+                    "Cover with lid, simmer 3 hours.",
+                    "Remove brisket (should be fall-apart tender), cool then refrigerate for later.",
+                    "Simmer remaining soup UNCOVERED for 40 minutes.",
+                    "Strain broth into another pot, discard bones and spices. Should be about 2.5 litres / 2.65 quarts (10 cups), if loads more, redu",
+                    "Add fish sauce, adjust salt and sugar if needed. Broth should be beefy, fragrant with spices, savoury and barely sweet.",
+                    "Prepare rice noodles per packet, just prior to serving.",
+                    "Place noodles in bowl. Top with raw beef and brisket.",
+                    "Ladle over about 400 / 14 oz hot broth – will cook beef to medium rare.",
+                    "Serve with Toppings on the side!"
+                ]
+            },
+            "tags": [
+                "peanut-free",
+                "treenut-free"
+            ],
+            "rating": 4.99,
+            "servings": 6,
+            "totalTime": "3 hrs 20 min",
+            "ingredients": [
+                {
+                    "name": "Onion",
+                    "num": 2
+                },
+                {
+                    "name": "Ginger",
+                    "num": 1
+                },
+                {
+                    "name": "Star Anise",
+                    "num": 1
+                }, 
+                {
+                    "name": "Cinnamon Sticks",
+                    "num": 4
+                },
+                {
+                    "name": "Cardamon Pods",
+                    "num": 4
+                },
+                {
+                    "name": "Cloves",
+                    "num": 3
+                },
+                {
+                    "name": "Coriander Seeds",
+                    "num": 1
+                },
+                {
+                    "name": "Beef Brisket",
+                    "num": 3
+                },
+                {
+                    "name": "Beef Bones",
+                    "num": 2
+                },
+                {
+                    "name": "White Sugar",
+                    "num": 1
+                },
+                {
+                    "name": "Salt",
+                    "num": 1
+                },
+                {
+                    "name": "Fish Sauce",
+                    "num": 1
+                },
+                {
+                    "name": "Rice Sticks",
+                    "num": 1
+                },
+                {
+                    "name": "Beansprouts",
+                    "num": 1
+                },
+                {
+                    "name": "Lime",
+                    "num": 1
+                },
+                {
+                    "name": "Red Chilli",
+                    "num": 1
+                },
+                {
+                    "name": "Hoisin Sauce",
+                    "num": 1
+                },
+                {
+                    "name": "Sriracha",
+                    "num": 1
+                }
+             ]
+        },
+        {
+            "id": "12",
+            "title": "",
+            "blog": "",
+            "author": "",
+            "thumbnail": "",
+            "url": "",
+            "mealTypes": ["dessert", "snack"],
+            "printContent": {
+                "ingredients": [
+                    "",
+                    "",
+                    ""
+                ],
+                "steps": [
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "tags": [
+                "halal",
+                "vegetarian",
+                "peanut-free",
+                "treenut-free",
+                "pescatarian",
+                "vegan",
+                "gluten-free"
+            ],
+            "rating": 0,
+            "servings": 0,
+            "totalTime": "",
+            "ingredients": [
+                {
+                    "name": "",
+                    "num": 0
+                },
+                {
+                    "name": "",
+                    "num": 0
+                },
+                {
+                    "name": "",
+                    "num": 0
+                }
+             ]
+        },
+        {
+            "id": "13",
+            "title": "",
+            "blog": "",
+            "author": "",
+            "thumbnail": "",
+            "url": "",
+            "mealTypes": ["dessert", "snack"],
+            "printContent": {
+                "ingredients": [
+                    "",
+                    "",
+                    ""
+                ],
+                "steps": [
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "tags": [
+                "halal",
+                "vegetarian",
+                "peanut-free",
+                "treenut-free",
+                "pescatarian",
+                "vegan",
+                "gluten-free"
+            ],
+            "rating": 0,
+            "servings": 0,
+            "totalTime": "",
+            "ingredients": [
+                {
+                    "name": "",
+                    "num": 0
+                },
+                {
+                    "name": "",
+                    "num": 0
+                },
+                {
+                    "name": "",
+                    "num": 0
+                }
+             ]
         }
     ]
 

@@ -30,12 +30,16 @@ class PantryItem extends LitElement {
                 display: flex;
                 background-color: white;
                 align-items: center;
-                gap: 48px;
+                gap: 8px;
                 border-radius: 8px;
                 margin: 12px 0px;
                 justify-content: space-between;
                 padding: 16px 12px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .div-left {
+                flex: 1;
+                min-width: 0;
             }
             div.card.expiring {
                 border: 2px solid #CB2127;
@@ -63,9 +67,10 @@ class PantryItem extends LitElement {
                 margin: 0px;
             }
             .div-right {
-                display: flex; 
-                align-items: center; 
-                gap: 24px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
             }
             button {
                 text-align: center;
@@ -184,7 +189,7 @@ class PantryItem extends LitElement {
 
         return html`
             <div class="card ${expiringSoon ? 'expiring': ''} ${expired ? 'expired': ''}">
-                <div>
+                <div class="div-left">
                     <div class="name-row">
                         <h4>${this.item.name}</h4>
                         <button class=${this.item.isFav ? "icon-btn is-fav" : "icon-btn"} @click=${() => this.toggleFav()}>♥</button>

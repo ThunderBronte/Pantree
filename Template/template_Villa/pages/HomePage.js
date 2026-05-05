@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { LoginButton } from "../assets/js/login-button";
 import { profileStore } from "../assets/js/profile-store";
+import { pwaInstall, triggerInstall } from "../assets/js/pwa-install.js";
 
 export default function HomePage({ currentPath }) {
   const user = profileStore.user;
@@ -75,7 +76,12 @@ export default function HomePage({ currentPath }) {
       </div>
       
 
-      <button>Download the App</button>
+      ${!pwaInstall.isStandalone && pwaInstall.deferredPrompt
+        ? html`
+          <div style="display: flex; justify-content: center; margin-top: 24px;">
+            <button @click=${triggerInstall} style="background-color: #F3E5D9; color: #705B48; border: none; padding: 12px 24px; border-radius: 40px; font-size: 12px; cursor: pointer;">Download the App</button>
+          </div>`
+        : null}
     `
   }
   `;

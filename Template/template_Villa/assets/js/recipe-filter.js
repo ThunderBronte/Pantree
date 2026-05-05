@@ -54,23 +54,34 @@ class RecipeFilter extends LitElement {
       margin: 24px;
     }
     button {
-      background: #1e1e1e;
-      color: white;
+      background: #E4C9B2;
+      color: #1e1e1e;
       border: none;
       padding: 6px 12px;
       border-radius: 40px;
       cursor: pointer;
       font-size: 10px;
     }
+    button.meal-type {
+      background: #1e1e1e;
+      color: white;
+    }
     button.is_active {
       background: #cb2127;
+      color: white;
     }
   `;
   }
 
   render() {
+    const mealTypes = new Set(["breakfast", "lunch", "dinner", "dessert", "snack"]);
     const tags = [
       "all",
+      "breakfast",
+      "lunch",
+      "dinner",
+      "dessert",
+      "snack",
       "dairy-free",
       "peanut-free",
       "treenut-free",
@@ -86,7 +97,7 @@ class RecipeFilter extends LitElement {
         ${tags.map(
           tag => html`
             <button
-              class=${this.active === tag ? "is_active" : ""}
+              class=${[mealTypes.has(tag) ? "meal-type" : "", this.active === tag ? "is_active" : ""].filter(Boolean).join(" ")}
               @click=${() => this.selectFilter(tag)}
             >
               ${tag.charAt(0).toUpperCase() + tag.slice(1)}

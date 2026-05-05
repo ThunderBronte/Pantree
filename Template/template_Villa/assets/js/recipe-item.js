@@ -16,7 +16,6 @@ class RecipeItem extends LitElement {
   static styles = css`
     :host {
         display: block;
-        width: 100%;
     }
     div.card {
       display: flex;
@@ -30,7 +29,6 @@ class RecipeItem extends LitElement {
       width: 200px;
       background-color: white;
       border-radius: 8px;
-      margin: 12px 0px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       cursor: pointer;
     }
@@ -153,8 +151,6 @@ class RecipeItem extends LitElement {
           ${this.renderStars(this.recipe.rating)}
         </div>
       </div>
-
-      <div class="section"></div>
     `;
   }
 }

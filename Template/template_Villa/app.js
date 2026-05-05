@@ -14,8 +14,13 @@ import RecipeDetailPage from "./pages/RecipeDetailPage.js";
 import './assets/js/app-header.js';
 
 import "./assets/js/app-footer.js";
+import "./assets/js/pwa-install.js";
 
 console.log("app.js loaded");
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
 
 export class App extends LitElement {
   
@@ -36,14 +41,13 @@ createRenderRoot() {
   connectedCallback() {
     super.connectedCallback();
     window.addEventListener("hashchange", this.handleHashChange);
-
-    window.addEventListener("profile-changed", () => {
-      this.requestUpdate();
-    });
+    window.addEventListener("profile-changed", () => this.requestUpdate());
+    window.addEventListener("pwa-install-ready", () => this.requestUpdate());
   }
 
   disconnectedCallback() {
     window.removeEventListener("hashchange", this.handleHashChange);
+    window.removeEventListener("pwa-install-ready", () => this.requestUpdate());
     super.disconnectedCallback();
   }
 

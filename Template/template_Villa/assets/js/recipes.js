@@ -27,10 +27,12 @@ export class AppRecipes extends LitElement {
     return css`
       :host {
         display: flex;
-        flex-wrap: wrap;
       }
       section {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
         gap: 24px;
       }
     `;
@@ -54,6 +56,14 @@ filterByType(recipes) {
   if (this.filterTag === "all") return recipes;
   if (this.filterTag === "saved") return recipes.filter(r => this._savedIds.includes(r.id));
 
+  const mealTypeFilters = new Set(["breakfast", "lunch", "dinner", "dessert", "snack"]);
+  if (mealTypeFilters.has(this.filterTag)) {
+    return recipes.filter(recipe =>
+      Array.isArray(recipe.mealTypes) &&
+      recipe.mealTypes.some(m => m.toLowerCase() === this.filterTag)
+    );
+  }
+
   return recipes.filter(recipe =>
     Array.isArray(recipe.tags) &&
     recipe.tags.some(tag => tag.toLowerCase() === this.filterTag)
@@ -76,9 +86,11 @@ filterByType(recipes) {
       ? byTag.filter(r => r.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
       : byTag;
 
+    const sorted = [...filtered].sort((a, b) => a.title.localeCompare(b.title));
+
     return html`
       <section>
-        ${this.renderRecipes(filtered)}
+        ${this.renderRecipes(sorted)}
       </section>
     `;
   }

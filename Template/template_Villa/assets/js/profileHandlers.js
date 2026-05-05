@@ -52,5 +52,6 @@ export function onSave() {
 export function onSignOut() {
   localStorage.removeItem("profile");
   profileStore.user = null;
+  window.location.hash = "/";
   window.dispatchEvent(new CustomEvent("profile-changed"));
 }

@@ -18,6 +18,7 @@ export default function RecipesPage() {
         <recipe-search-bar></recipe-search-bar> <!--fix searchbar to work for recipes or create special one-->
         <recipe-filter @filter-change=${onFilterChange}></recipe-filter>
         <app-recipes></app-recipes>
+        <section class="section"></section>
       </div>
     </div>
     

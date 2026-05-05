@@ -32,12 +32,16 @@ class GroceryItem extends LitElement {
                 display: flex;
                 background-color: white;
                 align-items: center;
-                gap: 48px;
+                gap: 8px;
                 border-radius: 8px;
                 margin: 12px 0px;
                 justify-content: space-between;
                 padding: 16px 12px;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .div-left {
+                flex: 1;
+                min-width: 0;
             }
             /*div.card.expiring {
                 border: 2px solid #CB2127;
@@ -62,9 +66,10 @@ class GroceryItem extends LitElement {
                 margin: 0px;
             }
             .div-right {
-                display: flex; 
-                align-items: center; 
-                gap: 12px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-shrink: 0;
             }
             button {
                 text-align: center;
@@ -117,7 +122,7 @@ class GroceryItem extends LitElement {
 
     return html`
         <div class="card">
-            <div>
+            <div class="div-left">
                 <h4 class=${this.checked ? "crossed" : this.item.usedInRecipe ? "recipe-used" : ""}>${this.item.name}</h4>
                 <p>${this.item.type}</p>
                 ${this.item.usedInRecipe
